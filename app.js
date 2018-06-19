@@ -4,7 +4,10 @@ var app = express();
 // Require Routes
 var indexRoutes = require("./routes/index");
 
-// Run app
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
+
+// Run application
 app.use(indexRoutes);
 
 var port = process.env.PORT || 3000;
