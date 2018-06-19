@@ -1,1 +1,1 @@
-alert("HELLO!");
+console.log("LINKED!");
