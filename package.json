@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/chingu-voyage6/Geckos-Team-05/issues"
   },
-  "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme"
+  "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
