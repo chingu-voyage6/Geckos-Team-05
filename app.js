@@ -9,6 +9,9 @@ app.use(express.static(__dirname + "/public"));
 
 // Run application
 app.use(indexRoutes);
+app.use(function(req, res) {
+  res.render("404");
+});
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
