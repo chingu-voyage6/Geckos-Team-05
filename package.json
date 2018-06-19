@@ -1,0 +1,19 @@
+{
+  "name": "news-chingu",
+  "version": "1.0.0",
+  "description": "A web app to view the latest news",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyage6/Geckos-Team-05.git"
+  },
+  "author": "Chingu Voyage 6 Geckos Team 5",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chingu-voyage6/Geckos-Team-05/issues"
+  },
+  "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme"
+}
