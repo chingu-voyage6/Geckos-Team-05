@@ -18,6 +18,7 @@
   "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme",
   "dependencies": {
     "ejs": "^2.6.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "mongoose": "^5.1.6"
   }
 }
