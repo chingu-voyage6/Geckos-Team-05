@@ -1,9 +1,11 @@
 var express = require("express");
 var app = express();
 
-app.get("/", function (req, res) {
-  res.send("hello world");
-});
+// Require Routes
+var indexRoutes = require("./routes/index");
+
+// Run app
+app.use(indexRoutes);
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
