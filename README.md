@@ -14,15 +14,14 @@
 
 4. Clone this repo:
     ```cli
-    git clone https://github.com/chingu-voyage6/Geckos-Team-05.git
-    cd Geckos-Team-05
+    git clone https://github.com/chingu-voyage6/Geckos-Team-05.git && cd Geckos-Team-05
     ```
 
 5. In the root directory, create a new file called `.env`:
-  ```cli
-  touch .env
-  ```
-  Then find the file called `.env.default` and copy & paste its contents into the `.env` file. For each key available, add the necessary value (sent privately).
+    ```cli
+    touch .env
+    ```
+    Then find the file called `.env.default` and copy & paste its contents into the `.env` file. For each key available, add the necessary value (sent privately).
 
 6. Install Node packages:
     ```cli
@@ -37,6 +36,7 @@
     ```
     *NOTE: You may find it useful to install the* `nodemon` *package so that you don't need to restart the Node server every time an edit is made. To do this run* `npm install -g nodemon` *from the command line, and then run* `nodemon app.js` *instead of* `node app.js` *going forward.*
 
+### Finish Line
 If everything is set up correctly, after running `node app.js` you should see the following:
 * Open [localhost:3000](localhost:3000) in your browser; the title should say **News App** and there should be 3 headers colored blue, orange, and teal.
 * Open the console in your browser dev tools. You should see the message **LINKED!**
