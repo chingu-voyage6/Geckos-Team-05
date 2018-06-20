@@ -18,15 +18,33 @@
     cd Geckos-Team-05
     ```
 
-5. Install Node packages:
+5. In the root directory, create a new file called `.env`:
+  ```cli
+  touch .env
+  ```
+  Then find the file called `.env.default` and copy & paste its contents into the `.env` file. For each key available, add the necessary value (sent privately).
+
+6. Install Node packages:
     ```cli
     npm install
     ```
 
-6. Open a database server on your local machine by running the `mongod` command in a shell **separate from the project command prompt**. The server must stay running in a separate window or tab *the whole time you plan to run the app locally*. At the end of your dev session, you can stop the server with `ctrl + c`.
+7. Open a database server on your local machine by running the `mongod` command in a shell **separate from the project command prompt**. The server must stay running in a separate window or tab *the whole time you plan to run the app locally*. At the end of your dev session, you can stop the server with `ctrl + c`.
 
-7. Run app on local server:
+8. Run app on local server:
     ```cli
     node app.js
     ```
     *NOTE: You may find it useful to install the* `nodemon` *package so that you don't need to restart the Node server every time an edit is made. To do this run* `npm install -g nodemon` *from the command line, and then run* `nodemon app.js` *instead of* `node app.js` *going forward.*
+
+If everything is set up correctly, after running `node app.js` you should see the following:
+* Open [localhost:3000](localhost:3000) in your browser; the title should say **News App** and there should be 3 headers colored blue, orange, and teal.
+* Open the console in your browser dev tools. You should see the message **LINKED!**
+* In the shell where you have run the `node app.js` command, you should see the following:
+  ```cli
+  $ node app.js
+  App running on port 3000
+  DATABASE IS LINKED & SAVING DATA!
+  ```
+* If you open a new command line prompt, you can run `mongo` to open the Mongo shell, and then type `show dbs` to get a list of created databases. You should see `chingu-news-app`, which was created when you ran the app the first time.
+  > To exit the mongo shell type `quit() + Enter`
