@@ -7,13 +7,14 @@ var nodeEnv = process.env.NODE_ENV || "development";
 if (nodeEnv === "development") {
   require("dotenv").config()}
 
-// Connect to database & user models
+// Connect to database & all database models
 mongoose.connect(process.env.MONGODB_URI);
 var TestItem = require("./models/test");
 
-// Require Routes
+// Require application routes
 var indexRoutes = require("./routes/index");
 
+// Handle front end content
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
@@ -29,7 +30,7 @@ app.listen(port, function() {
 });
 
 
-// TEMPORARY DATABASE TEST
+// TEMPORARY DATABASE TEST -- DELETE WHEN DATABASE IS LINKED TO API
 var george = new TestItem({
   name: "george",
   age: 47
