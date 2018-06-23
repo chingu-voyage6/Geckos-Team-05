@@ -1,0 +1,17 @@
+{
+  "name": "news-chingu",
+  "version": "1.0.0",
+  "description": "A web app to view the latest news",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon ./Server/app_test.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyage6/Geckos-Team-05.git"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0"
+  }
+}

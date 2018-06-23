@@ -35,7 +35,7 @@
 
 
 
-module.export  = articles;
+module.exports.articles = articles;
 
   // return { articles: articles };
 // };

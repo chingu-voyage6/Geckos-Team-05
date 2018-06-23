@@ -24,10 +24,12 @@ app.use(function(req, res) {
   res.render("404");
 });
 
+
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log("App running on port " + port);
 });
+
 
 
 // TEMPORARY DATABASE TEST -- DELETE WHEN DATABASE IS LINKED TO API
