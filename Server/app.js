@@ -16,10 +16,6 @@ var indexRoutes = require("./routes/index");
 //Require database test
 var dbTest = require("./routes/db-test");
 
-// Handle front end content
-app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
-
 // Run application
 app.use(indexRoutes);
 app.use(dbTest);
