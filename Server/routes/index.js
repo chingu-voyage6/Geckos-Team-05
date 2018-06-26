@@ -1,10 +1,8 @@
 var express = require("express");
 var router = express.Router();
 
-router.get("/", function(req, res) {
-  res.render("index");
+router.get("/api", (req, res) => {
+  res.send({ express: "Hello From Express!" });
 });
 
 module.exports = router;
-
-

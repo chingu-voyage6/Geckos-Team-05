@@ -25,11 +25,8 @@ app.use(function(req, res) {
 });
 
 
-var port = process.env.PORT || 3000;
-app.listen(port, function() {
-  console.log("App running on port " + port);
-});
-
+var port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`App running on port ${port}`));
 
 
 // TEMPORARY DATABASE TEST -- DELETE WHEN DATABASE IS LINKED TO API

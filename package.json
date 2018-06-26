@@ -4,7 +4,7 @@
   "description": "A web app to view the latest news",
   "scripts": {
     "client": "cd client && yarn start",
-    "server": "nodemon ./Server/app_test.js",
+    "server": "nodemon ./Server/app.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "repository": {
