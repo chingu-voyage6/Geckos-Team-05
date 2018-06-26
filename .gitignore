@@ -12,4 +12,4 @@ Client_old/node_modules
 Server/node_modules
 Server/.env
 node_modules
-
+.env
