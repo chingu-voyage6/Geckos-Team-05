@@ -2,6 +2,13 @@
   "name": "example-create-react-app-express",
   "version": "0.1.0",
   "private": true,
+  "author": "Chingu Voyage 6 Geckos Team 5",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chingu-voyage6/Geckos-Team-05/issues"
+  },
+  "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme",
+
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
