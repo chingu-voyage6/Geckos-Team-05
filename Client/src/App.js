@@ -11,7 +11,7 @@ class App extends Component {
 
   componentDidMount() {
     this.callApi()
-      .then(res => this.setState({ response: res.express }))
+      .then(res => this.setState({ response: res.data[0].name }))
       .catch(err => console.log(err));
   }
 
@@ -31,7 +31,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">{this.state.response}</p>
+        <p className="App-intro">The name <strong>{this.state.response}</strong> comes from the database.</p>
       </div>
     );
   }
