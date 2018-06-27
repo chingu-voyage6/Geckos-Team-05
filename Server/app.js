@@ -9,30 +9,19 @@ if (nodeEnv === "development") {
 
 // Connect to database & all database models
 mongoose.connect(process.env.MONGODB_URI);
-var TestItem = require("./models/test");
 
 // Require application routes
 var indexRoutes = require("./routes/index");
 
-// Handle front end content
-app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+//Require database test
+var dbTest = require("./routes/db-test");
 
 // Run application
 app.use(indexRoutes);
+app.use(dbTest);
 app.use(function(req, res) {
   res.render("404");
 });
 
-var port = process.env.PORT || 3000;
-app.listen(port, function() {
-  console.log("App running on port " + port);
-});
-
-
-// TEMPORARY DATABASE TEST -- DELETE WHEN DATABASE IS LINKED TO API
-var george = new TestItem({
-  name: "george",
-  age: 47
-});
-george.save().then(() => console.log("DATABASE IS LINKED & SAVING DATA!"));
+var port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`App running on port ${port}`));

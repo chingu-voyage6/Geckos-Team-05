@@ -2,10 +2,9 @@
   "name": "news-chingu",
   "version": "1.0.0",
   "description": "A web app to view the latest news",
+  "main": "app.js",
   "scripts": {
-    "client": "cd client && yarn start",
-    "server": "nodemon ./Server/app.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,8 +16,10 @@
     "url": "https://github.com/chingu-voyage6/Geckos-Team-05/issues"
   },
   "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme",
-
-  "devDependencies": {
-    "concurrently": "^3.6.0"
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.6"
   }
 }

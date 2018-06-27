@@ -1,0 +1,24 @@
+{
+  "name": "example-create-react-app-express",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Chingu Voyage 6 Geckos Team 5",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chingu-voyage6/Geckos-Team-05/issues"
+  },
+  "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme",
+
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:5000/"
+}
