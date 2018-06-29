@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 
 
 
-class ArticleData extends React.Component {
+class Bottom extends React.Component {
 	constructor () {
 		super ();
 		this.state = {
-			array: [],
-			topComponents: []
+			arr: [],
+			bottomComponents: []
 		}
 	}
 
@@ -23,18 +23,18 @@ class ArticleData extends React.Component {
 				return results.json();
 			}).then(data => {
 				// this is where the data JSON file is stored
-				let array = data.articles;
+				let arr = data.articles;
 
 				// sort the array descending on the publish dates
-				for (let i=0; i<array.length; i++){
-				    array.sort(function (a, b) {
+				for (let i=0; i<arr.length; i++){
+				    arr.sort(function (a, b) {
 				      return Date.parse(b.publishedAt) - Date.parse(a.publishedAt)
 				    })
 				}
 
 				// only use the first 3 articles to be displayed on the screen
-			 	array = array.slice(0,3);
-				let topComponents = array.map((val) => {
+			 	arr = arr.slice(3);
+				let bottomComponents = arr.map((val) => {
 					return (
 						<Articles 
 					          imageUrl = {val.urlToImage}
@@ -45,7 +45,7 @@ class ArticleData extends React.Component {
 					    />							
 					)
 				})	
-			this.setState({topComponents: topComponents});
+			this.setState({bottomComponents: bottomComponents});
 					
 			})
 			
@@ -53,36 +53,35 @@ class ArticleData extends React.Component {
 
 	render (){
 		return (
-	      <div>
-	        {this.state.topComponents}
+	     <div className ="container-bottom-articles">
+	        {this.state.bottomComponents}
 	      </div>
 	    );
 	}
 }
 
 class Articles extends React.Component {
-	constructor(props){
-	    super(props);
-	 }
-
-	render() {
-	    return (
-	      <div className={this.props.id}>
-	        <div className='clearfix'>
-	          <div className='image'>
-	            <img src={this.props.imageUrl}/>
-	          </div>
-	          <div className='info'>
-	             <h3 className="headline">{this.props.headline}</h3>
-	             <p className ="content">{this.props.content}</p>
-	             <a href={this.props.linkUrl}>Read More</a>
-	          </div>
-	        </div>
-	      </div>
-	    );
-	}
+  constructor(props){
+    super(props);
+ }
+  render() {
+    return (
+      <div className='box'>
+        <div className={this.props.id}>
+          <div className='bottom-image'>
+            <img src={this.props.imageUrl}/>
+          </div>
+          <div className='bottom-info'>
+             <h5 className="bottom-headline">{this.props.headline}</h5>
+             <p className ="bottom-content">{this.props.content}</p>
+             <a href={this.props.linkUrl}>Read More</a>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 
 
-export default ArticleData;
+export default Bottom;
