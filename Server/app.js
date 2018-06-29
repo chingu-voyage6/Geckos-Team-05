@@ -25,3 +25,7 @@ app.use(function(req, res) {
 
 var port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`App running on port ${port}`));
+
+// Require application api routes
+var apiRoutes = require("./routes/api");
+
