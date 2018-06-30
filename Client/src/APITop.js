@@ -3,18 +3,22 @@ import ReactDOM from 'react-dom';
 
 
 
+
 class ArticleData extends React.Component {
 	constructor () {
 		super ();
 		this.state = {
 			array: [],
-			topComponents: []
+			topComponents: [],
+			defaultImg: ('../assets/updating.jpg')
+			
 		}
 	}
 
 	componentDidMount () {
 		let url = 'https://newsapi.org/v2/top-headlines?country=us&' + 
 		'apiKey=dbd9c86c9a9140b38fcaa4c85bc4b689';
+
 
         // let req = new Request (url);
 
@@ -36,21 +40,33 @@ class ArticleData extends React.Component {
 			 	array = array.slice(0,3);
 			 	console.log(array);
 				let topComponents = array.map((val) => {
-					return (
-						<Articles 
+					if (val.urlToImage == null ) {
+						return (
+							<Articles 
 							  id = {val.source.id + val.publishedAt}
-					          imageUrl = {val.urlToImage}
+							  imageUrl = {this.state.defaultImg}
 					          headline = {val.title}
 					          content = {val.description}
 					          linkUrl = {val.url}
 					          date = {val.publishedAt}
-					    />							
-					)
+					   		/>	
+						)
+					} else {
+						return (
+							<Articles 
+								  id = {val.source.id + val.publishedAt}
+								  imageUrl = {val.urlToImage}
+						          
+						          headline = {val.title}
+						          content = {val.description}
+						          linkUrl = {val.url}
+						          date = {val.publishedAt}
+						    />							
+						)
+					}
 				})	
 			this.setState({topComponents: topComponents});
-					
 			})
-			
 	}
 
 	render (){
@@ -72,7 +88,7 @@ class Articles extends React.Component {
 	      <div key={this.props.id}>
 	        <div className='clearfix'>
 	          <div className='image'>
-	            <img src={this.props.imageUrl}/>
+	            <img src={this.props.imageUrl} width={300} height={200}/>
 	          </div>
 	          <div className='info'>
 	             <h3 className="headline">{this.props.headline}</h3>

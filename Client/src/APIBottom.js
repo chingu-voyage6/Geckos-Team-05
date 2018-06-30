@@ -8,7 +8,8 @@ class Bottom extends React.Component {
 		super ();
 		this.state = {
 			arr: [],
-			bottomComponents: []
+			bottomComponents: [],
+			defaultImg: ('../assets/updating.jpg')
 		}
 	}
 
@@ -36,16 +37,30 @@ class Bottom extends React.Component {
 			 	arr = arr.slice(3);
 			 	console.log(arr);
 				let bottomComponents = arr.map((val) => {
-					return (
-						<Articles 
+					if (val.urlToImage == null ) {
+						return (
+							<Articles 
 							  id = {val.source.id + val.publishedAt}
-					          imageUrl = {val.urlToImage}
+							  imageUrl = {this.state.defaultImg}
 					          headline = {val.title}
 					          content = {val.description}
 					          linkUrl = {val.url}
 					          date = {val.publishedAt}
-					    />							
-					)
+					   		/>	
+						)
+					} else {
+						return (
+							<Articles 
+								  id = {val.source.id + val.publishedAt}
+								  imageUrl = {val.urlToImage}
+						          
+						          headline = {val.title}
+						          content = {val.description}
+						          linkUrl = {val.url}
+						          date = {val.publishedAt}
+						    />							
+						)
+					}
 				})	
 			this.setState({bottomComponents: bottomComponents});
 					
@@ -71,7 +86,7 @@ class Articles extends React.Component {
       <div className='box'>
         <div key={this.props.id}>
           <div className='bottom-image'>
-            <img src={this.props.imageUrl}/>
+            <img src={this.props.imageUrl} width={280} height={180}/>
           </div>
           <div className='bottom-info'>
              <h5 className="bottom-headline">{this.props.headline}</h5>
