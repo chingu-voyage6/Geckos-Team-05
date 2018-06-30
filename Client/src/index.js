@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // import App from "./App.js";
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './utils/registerServiceWorker';
 // import App1 from "./App1.js";
-import TopArticles from "./APITop.js";
-import BottomArticles from "./APIBottom.js";
+import TopArticles from "./components/APITop.js";
+import BottomArticles from "./components/APIBottom.js";
 
 
 ReactDOM.render(
