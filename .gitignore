@@ -7,3 +7,4 @@ ehthumbs.db
 Thumbs.db
 node_modules
 .env
+Client/src/script.js

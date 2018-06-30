@@ -22,19 +22,25 @@
 			<div class="col-md-12">
 				<!---------- HEADER ---------->
 				<header>
-				  	<h1 class="logo">Logo</h1>
+				  	<h1 class="logo"></h1>
 				  	<nav>
 			  			<ul>
-							    <li class="nav-item"><a href="#" >Home</a></li>
-							    <li class="nav-item"><a href="#" >Blog</a></li>
+							   <!--  <li class="nav-item"><a href="#" >Home</a></li>
 							    <li class="nav-item"><a href="#">About</a></li>
-			    				<li class="nav-item"><a href="#" >Contact</a></li>
-						  </ul>
-							  <div class="menu-bar">Menu
+			    				<li class="nav-item"><a href="#" >Contact</a></li> -->
+						</ul>
+						<div class="search-wrapper">
+						    <div class="input-holder">
+						        <input type="text" class="search-input" placeholder="Type to search" />
+						        <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+						    </div>
+						    <span class="close" onclick="searchToggle(this, event);"></span>
+						</div>
+						  <!-- <div class="menu-bar">Menu
 								    <span class="hamburger-icon"><i class="fa fa-bars"></i></span>
-						  </div>
+						  </div> -->
 					</nav>
-				<header>
+				</header>
 		 
 	
 	
@@ -60,8 +66,10 @@
 	</div>
 <!----- END OF BOOTSTRAP ----->
 
-  
-
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../src/script.js"></script>
 </body>	
 
 </html>

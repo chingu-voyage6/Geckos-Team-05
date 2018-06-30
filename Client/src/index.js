@@ -4,13 +4,13 @@ import ReactDOM from "react-dom";
 // import App from "./App.js";
 import registerServiceWorker from './registerServiceWorker';
 // import App1 from "./App1.js";
-import ArticleData from "./APITop.js";
+import TopArticles from "./APITop.js";
 import BottomArticles from "./APIBottom.js";
 
 
 ReactDOM.render(
 
-	<ArticleData />,
+	<TopArticles />,
 	document.getElementById("to-render-1")
 );
 

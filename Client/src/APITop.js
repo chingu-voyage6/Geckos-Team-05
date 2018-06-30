@@ -34,9 +34,11 @@ class ArticleData extends React.Component {
 
 				// only use the first 3 articles to be displayed on the screen
 			 	array = array.slice(0,3);
+			 	console.log(array);
 				let topComponents = array.map((val) => {
 					return (
 						<Articles 
+							  id = {val.source.id + val.publishedAt}
 					          imageUrl = {val.urlToImage}
 					          headline = {val.title}
 					          content = {val.description}
@@ -67,7 +69,7 @@ class Articles extends React.Component {
 
 	render() {
 	    return (
-	      <div className={this.props.id}>
+	      <div key={this.props.id}>
 	        <div className='clearfix'>
 	          <div className='image'>
 	            <img src={this.props.imageUrl}/>

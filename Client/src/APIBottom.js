@@ -34,9 +34,11 @@ class Bottom extends React.Component {
 
 				// only use the first 3 articles to be displayed on the screen
 			 	arr = arr.slice(3);
+			 	console.log(arr);
 				let bottomComponents = arr.map((val) => {
 					return (
 						<Articles 
+							  id = {val.source.id + val.publishedAt}
 					          imageUrl = {val.urlToImage}
 					          headline = {val.title}
 					          content = {val.description}
@@ -67,7 +69,7 @@ class Articles extends React.Component {
   render() {
     return (
       <div className='box'>
-        <div className={this.props.id}>
+        <div key={this.props.id}>
           <div className='bottom-image'>
             <img src={this.props.imageUrl}/>
           </div>
