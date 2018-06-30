@@ -4,10 +4,11 @@ import ReactDOM from 'react-dom';
 
 
 
-class ArticleData extends React.Component {
+class Top extends React.Component {
 	constructor () {
 		super ();
 		this.state = {
+			// response: '',
 			array: [],
 			topComponents: [],
 			defaultImg: ('../assets/updating.jpg')
@@ -15,19 +16,14 @@ class ArticleData extends React.Component {
 		}
 	}
 
-	componentDidMount () {
-		let url = 'https://newsapi.org/v2/top-headlines?country=us&' + 
-		'apiKey=dbd9c86c9a9140b38fcaa4c85bc4b689';
-
-
-        // let req = new Request (url);
-
-		fetch (url)
-			.then(results => {
-				return results.json();
-			}).then(data => {
-				// this is where the data JSON file is stored
-				let array = data.articles;
+	componentDidMount() {
+	    
+	    fetch ("/api")
+		    .then(results => {
+		        return results.json();
+		    }).then(data => {
+		    	// this is where the data JSON file is stored
+		    	let array = data.articles;
 
 				// sort the array descending on the publish dates
 				for (let i=0; i<array.length; i++){
@@ -67,6 +63,9 @@ class ArticleData extends React.Component {
 				})	
 			this.setState({topComponents: topComponents});
 			})
+
+			
+					
 	}
 
 	render (){
@@ -103,4 +102,5 @@ class Articles extends React.Component {
 
 
 
-export default ArticleData;
+export default Top;
+

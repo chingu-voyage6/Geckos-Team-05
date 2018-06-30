@@ -1,41 +1,79 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-let seed_gen = require("./seed_gen.js");
-let bottom_articles
 
 
-class BottomArticleList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.bottom_articles = [];
-  }
-  
-  render() {
-    const sortedArticles = seed_gen.articles.sort((a, b) => (
-      a.date - b.date
-    ));
-
-    // loop through sortedArticles and push the rest articles in bottom_articles array
-    for (let i=3; i<sortedArticles.length; i++){
-      this.bottom_articles.push(sortedArticles[i]);
+class Bottom extends React.Component {
+  constructor () {
+    super ();
+    this.state = {
+      arr: [],
+      bottomComponents: [],
+      defaultImg: ('../assets/updating.jpg')
     }
+  }
 
-    let bottomArticleComponents = this.bottom_articles.map((val) => (
-      <Articles 
-          id = {val.id}
-          imageUrl = {val.imageUrl}
-          headline = {val.headline}
-          content = {val.content}
-          linkUrl = {val.linkUrl}
-          date = {val.date}
-      />
-    ));
+  componentDidMount () {
+    let url = 'https://newsapi.org/v2/top-headlines?country=us&' + 
+    'apiKey=dbd9c86c9a9140b38fcaa4c85bc4b689';
+
+        // let req = new Request (url);
+
+    fetch (url)
+      .then(results => {
+        return results.json();
+      }).then(data => {
+        // this is where the data JSON file is stored
+        let arr = data.articles;
+
+        // sort the array descending on the publish dates
+        for (let i=0; i<arr.length; i++){
+            arr.sort(function (a, b) {
+              return Date.parse(b.publishedAt) - Date.parse(a.publishedAt)
+            })
+        }
+
+        // only use the first 3 articles to be displayed on the screen
+        arr = arr.slice(3);
+        console.log(arr);
+        let bottomComponents = arr.map((val) => {
+          if (val.urlToImage == null ) {
+            return (
+              <Articles 
+                id = {val.source.id + val.publishedAt}
+                imageUrl = {this.state.defaultImg}
+                    headline = {val.title}
+                    content = {val.description}
+                    linkUrl = {val.url}
+                    date = {val.publishedAt}
+                />  
+            )
+          } else {
+            return (
+              <Articles 
+                  id = {val.source.id + val.publishedAt}
+                  imageUrl = {val.urlToImage}
+                      
+                      headline = {val.title}
+                      content = {val.description}
+                      linkUrl = {val.url}
+                      date = {val.publishedAt}
+                />              
+            )
+          }
+        })  
+      this.setState({bottomComponents: bottomComponents});
+          
+      })
+      
+  }
+
+  render (){
     return (
-      <div className ="container-bottom-articles">
-        {bottomArticleComponents}
-      </div>
-    );
+       <div className ="container-bottom-articles">
+          {this.state.bottomComponents}
+        </div>
+      );
   }
 }
 
@@ -46,9 +84,9 @@ class Articles extends React.Component {
   render() {
     return (
       <div className='box'>
-        <div className={this.props.id}>
+        <div key={this.props.id}>
           <div className='bottom-image'>
-            <img src={this.props.imageUrl}/>
+            <img src={this.props.imageUrl} width={280} height={180}/>
           </div>
           <div className='bottom-info'>
              <h5 className="bottom-headline">{this.props.headline}</h5>
@@ -63,9 +101,4 @@ class Articles extends React.Component {
 
 
 
-export default BottomArticleList;
-
-
-
-
-
+export default Bottom;

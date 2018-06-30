@@ -1,7 +1,7 @@
 {
-  "name": "news-chingu",
+  "name": "npm_demo",
   "version": "1.0.0",
-  "description": "A web app to view the latest news",
+  "description": "I'm practising npm",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,12 +11,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chingu-voyage6/Geckos-Team-05.git"
-  },
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:5000",
-      "ws": true
-    }
   },
   "author": "Huong Nguyen",
   "license": "ISC",
@@ -36,6 +30,6 @@
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
-  }
-
+  }, 
+  "proxy": "http://localhost:3000/api"
 }
