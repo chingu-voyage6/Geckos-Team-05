@@ -10,3 +10,14 @@ function searchToggle(obj, evt){
             container.find('.search-input').val('');
         }
 }
+
+    // Initialize Variables
+var closePopup = document.getElementById("popupclose");
+var overlay = document.getElementById("overlay");
+var popup = document.getElementById("popup");
+
+   // Close Popup Event
+closePopup.onclick = function() {
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
+};

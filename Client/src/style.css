@@ -279,7 +279,39 @@ ul{
 
 /*************  END OF NAVIGATION BAR  *************/
 
+/*************  POP UP PAGE  *************/
 
+/*#overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #999;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 100;
+}
+*/
+#popup {
+  position: absolute;
+  top: 45%;
+  left: 33%;
+  background: #999;
+  opacity: 0.8;
+  width: 70%;
+  height: 300em;
+  margin-left: -250px; /*Half the value of width to center div*/
+  margin-top: -250px; /*Half the value of height to center div*/
+  z-index: 200;
+}
+
+#popupclose {
+  float: right;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/*************  POP UP PAGE  ************
 
 
 /*************  TOP ARTICLES  *************/
