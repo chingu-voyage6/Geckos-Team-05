@@ -14,7 +14,7 @@ class Bottom extends React.Component {
   }
 
   componentDidMount () {
-    let url = 'https://newsapi.org/v2/top-headlines?country=us&' + 
+    let url = 'https://newsapi.org/v2/top-headlines?country=gb&' + 
     'apiKey=dbd9c86c9a9140b38fcaa4c85bc4b689';
 
         // let req = new Request (url);

@@ -16,7 +16,7 @@ class ArticleData extends React.Component {
   }
 
   componentDidMount () {
-    let url = 'https://newsapi.org/v2/top-headlines?country=us&' + 
+    let url = 'https://newsapi.org/v2/top-headlines?country=gb&' + 
     'apiKey=dbd9c86c9a9140b38fcaa4c85bc4b689';
 
 
@@ -88,7 +88,7 @@ class Articles extends React.Component {
         <div key={this.props.id}>
           <div className='clearfix'>
             <div className='image'>
-              <img src={this.props.imageUrl} width={300} height={200}/>
+              <img src={this.props.imageUrl} width={520} height={320}/>
             </div>
             <div className='info'>
                <h3 className="headline">{this.props.headline}</h3>

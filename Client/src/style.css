@@ -1,3 +1,7 @@
+/******* GOOGLE FONTS *******/
+@import url("https://fonts.googleapis.com/css?family=Patua+One");
+
+
 
 /*body{
   margin: 0;
@@ -289,15 +293,19 @@ ul{
 
  
 .clearfix {
-    overflow: auto;
+   /* overflow: auto;*/
     margin: 4em 0;
+    position: relative;
 }
 
-#top-articles img{
-  width: 50%;
-  min-height: 18em;
- /* float: right*/;
+
+
+#top-articles h3 {
+  font-family: 'Patua One', cursive;
+  font-size: 30px;
+  color: black;
 }
+
 
 .one {
   height: 14em;
@@ -330,18 +338,24 @@ ul{
 
 /*************  ARTICLES  *************/
 .bottom-headline {
-  font-size: 0.9em;
+  font-family: 'Patua One', cursive;
+  font-size: 18px;
+  color: black;
   text-align: center;
+  max-height: 9em ;
 }
 .bottom-content {
-  font-size: 0.7em;
+  font-size: 0.9em;
   text-align: center;
+  /*max-height: 12em;*/
 }
 
-
 .bottom-info a {
-  font-size: 0.8em;
+  font-size: 1em;
   text-align: center;
+  margin-left: 32%;
+  color: black;
+  font-family: 'Patua One', cursive;
 }
 
 .container-bottom-articles {
@@ -353,8 +367,8 @@ ul{
 }
 
 .box {
-  max-width: 15em;
-  margin: 1.5em 0.8em;
+  max-width: 17em;
+  margin: 1.2em 0.6em;
 }
 
 /*************  END OF ARTICLES  ************
