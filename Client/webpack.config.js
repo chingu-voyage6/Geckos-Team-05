@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 var HTMLWebpackPlugin = require("html-webpack-plugin");
 var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 	template: __dirname + "/public/index.html",
@@ -20,6 +21,28 @@ module.exports = {
 		filename: "transformed.js",
 		path: __dirname + "/build"
 	},
-	plugins: [HTMLWebpackPluginConfig],
-	mode : 'development'
+	plugins: [
+		HTMLWebpackPluginConfig, 
+		new webpack.HotModuleReplacementPlugin(
+			{     multiStep: true   }
+		)
+	],
+
+	mode : 'development',
+	devServer: {
+		historyApiFallback: true, 	 
+		hot: true, 	  
+		inline: true, 	  
+		host: 'localhost', 
+		// Defaults to `localhost` 	  
+		port: 8080, // Defaults to 8080 	  
+		proxy: { 	    
+			'^/api/*': { 	      
+				target: 'http://localhost:5000/api/', 	      
+				secure: false 	    
+			}	 	  
+		} 	
+	}
 };
+
+

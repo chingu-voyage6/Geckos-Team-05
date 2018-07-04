@@ -1,3 +1,27 @@
+$(document).ready(function(){
+    
+    $(".search-icon").click(function(){
+        let userInput = $(".search-box").val();
+        doWiki(userInput);
+    });
+
+    
+    $("search-input").on('keypress',function(event){
+        if (event.which == 13){
+            let userInput = $(".search-box").val();
+            doWiki(userInput);
+
+            // event.preventDefault();
+            return false;
+        }
+
+    });
+
+});
+
+
+
+// Function to add animatio to the search box
 function searchToggle(obj, evt){
     var container = $(obj).closest('.search-wrapper');
         if(!container.hasClass('active')){
