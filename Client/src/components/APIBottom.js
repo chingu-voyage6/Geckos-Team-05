@@ -7,31 +7,26 @@ class Bottom extends React.Component {
 	constructor () {
 		super ();
 		this.state = {
+			// response: '',
 			arr: [],
 			bottomComponents: [],
 			defaultImg: ('../assets/updating.jpg')
+			
 		}
 	}
 
 	componentDidMount () {
-		let url = 'https://newsapi.org/v2/top-headlines?country=gb&' + 
-		'apiKey=dbd9c86c9a9140b38fcaa4c85bc4b689';
-
-        // let req = new Request (url);
-
-		fetch (url)
-			.then(results => {
-				return results.json();
-			}).then(data => {
-				// this is where the data JSON file is stored
-				let arr = data.articles;
+		fetch ("http://localhost:5000/api/getLatestHeadlines")
+		    .then(results => {
+		        return results.json();
+		    }).then(data => {
+		    	// this is where the data JSON file is stored
+		    	let arr = data.data;
 
 				// sort the array descending on the publish dates
-				for (let i=0; i<arr.length; i++){
 				    arr.sort(function (a, b) {
 				      return Date.parse(b.publishedAt) - Date.parse(a.publishedAt)
 				    })
-				}
 
 				// only use the first 3 articles to be displayed on the screen
 			 	arr = arr.slice(3);

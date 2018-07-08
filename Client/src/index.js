@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import registerServiceWorker from './utils/registerServiceWorker';
 // import App1 from "./App1.js";
 import TopArticles from "./components/APITop.js";
-// import BottomArticles from "./components/APIBottom.js";
+import BottomArticles from "./components/APIBottom.js";
 
 
 ReactDOM.render(
@@ -14,10 +14,10 @@ ReactDOM.render(
 	document.getElementById("to-render-1")
 );
 
-// ReactDOM.render(
-// 	<BottomArticles />,
-// 	document.getElementById("to-render-2")
-// );
+ReactDOM.render(
+	<BottomArticles />,
+	document.getElementById("to-render-2")
+);
 
 
 registerServiceWorker();

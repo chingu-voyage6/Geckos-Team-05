@@ -23,14 +23,12 @@ class Top extends React.Component {
 		        return results.json();
 		    }).then(data => {
 		    	// this is where the data JSON file is stored
-		    	let array = data.articles;
+		    	let array = data.data;
 
 				// sort the array descending on the publish dates
-				for (let i=0; i<array.length; i++){
 				    array.sort(function (a, b) {
 				      return Date.parse(b.publishedAt) - Date.parse(a.publishedAt)
 				    })
-				}
 
 				// only use the first 3 articles to be displayed on the screen
 			 	array = array.slice(0,3);
