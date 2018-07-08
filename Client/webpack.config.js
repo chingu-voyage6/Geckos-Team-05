@@ -24,7 +24,7 @@ module.exports = {
 	plugins: [
 		HTMLWebpackPluginConfig, 
 		new webpack.HotModuleReplacementPlugin(
-			{     multiStep: true   }
+			{     multiStep: false   }
 		)
 	],
 
@@ -35,7 +35,7 @@ module.exports = {
 		inline: true, 	  
 		host: 'localhost', 
 		// Defaults to `localhost` 	  
-		port: 8080, // Defaults to 8080 	  
+		port: 3010, // Defaults to 8080 	  
 		proxy: { 	    
 			'^/api/*': { 	      
 				target: 'http://localhost:5000/api/', 	      
