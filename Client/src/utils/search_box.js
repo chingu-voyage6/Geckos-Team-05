@@ -1,23 +1,23 @@
-$(document).ready(function(){
+// $(document).ready(function(){
     
-    $(".search-icon").click(function(){
-        let userInput = $(".search-box").val();
-        doWiki(userInput);
-    });
+//     $(".search-icon").click(function(){
+//         let userInput = $(".search-box").val();
+//         doWiki(userInput);
+//     });
 
     
-    $("search-input").on('keypress',function(event){
-        if (event.which == 13){
-            let userInput = $(".search-box").val();
-            doWiki(userInput);
+//     $("search-input").on('keypress',function(event){
+//         if (event.which == 13){
+//             let userInput = $(".search-box").val();
+//             doWiki(userInput);
 
-            // event.preventDefault();
-            return false;
-        }
+//             // event.preventDefault();
+//             return false;
+//         }
 
-    });
+//     });
 
-});
+// });
 
 
 
