@@ -7,16 +7,23 @@ class Bottom extends React.Component {
 	constructor () {
 		super ();
 		this.state = {
-			// response: '',
 			arr: [],
 			bottomComponents: [],
-			defaultImg: ('../assets/updating.jpg')
+			defaultImg: ('../../assets/updating.jpg')
 			
+		}
+
+		// Create dev environment variables
+		var nodeEnv = process.env.NODE_ENV || "development";
+		if (nodeEnv === "development") {
+			this.URLPrefix = "http://localhost:5000/";
+		} else {
+			this.URLPrefix = "";
 		}
 	}
 
 	componentDidMount () {
-		fetch ("http://localhost:5000/api/getLatestHeadlines")
+		fetch (`${this.URLPrefix}api/getLatestHeadlines`)
 		    .then(results => {
 		        return results.json();
 		    }).then(data => {
@@ -34,7 +41,7 @@ class Bottom extends React.Component {
 				let bottomComponents = arr.map((val) => {
 					if (val.urlToImage == null ) {
 						return (
-							<Articles 
+							<BottomArticles 
 							  id = {val.source.id + val.publishedAt}
 							  imageUrl = {this.state.defaultImg}
 					          headline = {val.title}
@@ -45,7 +52,7 @@ class Bottom extends React.Component {
 						)
 					} else {
 						return (
-							<Articles 
+							<BottomArticles 
 								  id = {val.source.id + val.publishedAt}
 								  imageUrl = {val.urlToImage}
 						          
@@ -72,7 +79,7 @@ class Bottom extends React.Component {
 	}
 }
 
-class Articles extends React.Component {
+class BottomArticles extends React.Component {
   constructor(props){
     super(props);
  }

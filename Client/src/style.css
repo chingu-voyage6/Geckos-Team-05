@@ -325,9 +325,10 @@ ul{
 
  
 .clearfix {
-   /* overflow: auto;*/
+    overflow: auto;
     margin: 4em 0;
     position: relative;
+    padding: 3em 0;
 }
 
 
@@ -339,29 +340,23 @@ ul{
 }
 
 
-.one {
-  height: 14em;
-  position: relative;
+.right {
+  height: 18em;
 }
 
-.one img {
+.right img {
   float: right;
 }
 
-.two {
-  height: 14em;
+
+.left {
+  height: 18em;
 }
-.two img {
+.left img {
   float: left;
 }
 
 
-.three{
-  height: 14em;
-}
-.three img {
-  float: right;
-}
 
 
 /*************  END OF TOP ARTICLES  *************/

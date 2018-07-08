@@ -1,24 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
+//TODO: create a share component to get the headlines articles
 
 
 class Top extends React.Component {
 	constructor () {
 		super ();
 		this.state = {
-			// response: '',
 			array: [],
 			topComponents: [],
-			defaultImg: ('../assets/updating.jpg')
+			defaultImg: ('../../assets/updating.jpg'),
 			
+		}
+
+		// Create dev environment variables
+		var nodeEnv = process.env.NODE_ENV || "development";
+		if (nodeEnv === "development") {
+			this.URLPrefix = "http://localhost:5000/";
+		} else {
+			this.URLPrefix = "";
 		}
 	}
 
 	componentDidMount() {
 	    
-	    fetch ("http://localhost:5000/api/getLatestHeadlines")
+	    fetch (`${this.URLPrefix}api/getLatestHeadlines`)
 		    .then(results => {
 		        return results.json();
 		    }).then(data => {
@@ -32,29 +39,37 @@ class Top extends React.Component {
 
 				// only use the first 3 articles to be displayed on the screen
 			 	array = array.slice(0,3);
-			 	console.log(array);
+			 	let counter = 0; 
+			 	// console.log(array);
 				let topComponents = array.map((val) => {
+					//set counter to add class right or left to the top articles
+					counter +=1;
+					let sideClass = "left";
+					if (counter === 1 || counter === 3){
+						sideClass = "right";
+					}
 					if (val.urlToImage == null ) {
 						return (
-							<Articles 
+							<TopArticles 
 							  id = {val.source.id + val.publishedAt}
 							  imageUrl = {this.state.defaultImg}
 					          headline = {val.title}
 					          content = {val.description}
 					          linkUrl = {val.url}
 					          date = {val.publishedAt}
+					          position = {sideClass}
 					   		/>	
 						)
 					} else {
 						return (
-							<Articles 
+							<TopArticles 
 								  id = {val.source.id + val.publishedAt}
 								  imageUrl = {val.urlToImage}
-						          
 						          headline = {val.title}
 						          content = {val.description}
 						          linkUrl = {val.url}
 						          date = {val.publishedAt}
+						          position = {sideClass}
 						    />							
 						)
 					}
@@ -75,17 +90,20 @@ class Top extends React.Component {
 	}
 }
 
-class Articles extends React.Component {
+class TopArticles extends React.Component {
 	constructor(props){
 	    super(props);
+
+	    console.log(`these are`);
+	    console.log(this.props)
 	 }
 
 	render() {
 	    return (
 	      <div key={this.props.id}>
-	        <div className='clearfix'>
+	        <div className={['clearfix', this.props.position].join(' ')}>
 	          <div className='image'>
-	            <img src={this.props.imageUrl} width={300} height={200}/>
+	            <img src={this.props.imageUrl} width={400} height={320}/>
 	          </div>
 	          <div className='info'>
 	             <h3 className="headline">{this.props.headline}</h3>
