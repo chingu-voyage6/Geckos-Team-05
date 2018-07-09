@@ -2,11 +2,15 @@
   "name": "news-chingu",
   "version": "1.0.0",
   "description": "A web app to view the latest news",
+  "private": true,
+  "author": "Chingu Voyage 6 Geckos Team 5",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -18,15 +22,14 @@
       "ws": true
     }
   },
-  "author": "Huong Nguyen",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/chingu-voyage6/Geckos-Team-05/issues"
   },
   "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme",
   "dependencies": {
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

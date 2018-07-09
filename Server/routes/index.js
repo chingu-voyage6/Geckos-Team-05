@@ -21,6 +21,4 @@ router.get("/api/getLatestHeadlines", (req, res) => {
   });
 });
 
-
-
 module.exports = router;

@@ -19,6 +19,11 @@ var apiRoutes = require("./routes/api");
 // Run application
 app.use(indexRoutes);
 app.use(apiRoutes);
+
+//Require database test
+// var dbTest = require("./routes/db-test");
+// app.use(dbTest);
+
 app.use(function(req, res) {
   res.render("404");
 });
