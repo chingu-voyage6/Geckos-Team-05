@@ -4,7 +4,8 @@
   "description": "A web app to view the latest news",
   "scripts": {
     "client": "cd client && yarn start",
-    "server": "nodemon ./Server/app.js",
+    "server": "nodemon ./Server/app.js localhost 5000 --watch Server/",
+
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "repository": {
@@ -17,7 +18,6 @@
     "url": "https://github.com/chingu-voyage6/Geckos-Team-05/issues"
   },
   "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme",
-
   "devDependencies": {
     "concurrently": "^3.6.0"
   }
