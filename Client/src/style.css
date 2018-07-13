@@ -13,18 +13,11 @@
   font-family: 'Lato', sans-serif;
 }*/
 
-/*html {*/
-  /*background-color: #70808b;*/
-/*  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23e8e6ec' fill-opacity='0.34'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-*/
-/*  background: linear-gradient(135deg, rgba(232,208,136,1) 0%, rgba(240,166,87,1) 100%);
-}*/
-
-.container {
+body {
   /*position: relative;*/
   font-family: "Playfair Display", serif;
   width: 75%;
-  margin: 4em auto;
+  margin: 6em auto;
   background-color: #dbd8c7;
   padding: 2.5rem 1rem;
   color: #756b61;
@@ -53,10 +46,12 @@
   text-align: center;
   font-size: 4rem;
   border-top: 1px double #b6a388;
+  border-bottom: 1px double #b6a388;
   border-width: 5px;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
+  
 }
 /*************  END OF LOGO  *************/
 
@@ -66,9 +61,9 @@
 
 
 .search-wrapper {
-    position: absolute;
+/*    position: absolute;*/
     transform: translate(50%, 50%);
-    top:30%;
+    top:10%;
     left:45%;
 }
 .search-wrapper.active {}
@@ -83,7 +78,7 @@
     transition: all 0.3s ease-in-out;
 }
 .search-wrapper.active .input-holder {
-    width: 300px;
+    width: 220px;
     border-radius: 50px;
     background: rgba(0,0,0,0.5);
     transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
@@ -118,7 +113,11 @@
     height:70px;
     border:none;
     border-radius:6px;
-    background: #FFF;
+   /* background: #FFF;*/
+   background: #dbd8c7;
+   border: 1.4px solid #b6a388;
+  border-radius: 10%;
+  /*margin: 1em 0.5em 0 0.5em;*/
     padding:0px;
     outline:none;
     position: relative;
@@ -212,22 +211,15 @@ header{
   padding: 20px;
 }
 
-nav{
+/*nav{
   width: 100%;
   margin-bottom: 1em;
   font-family: 'Poiret One', cursive;
   display: inline-block;
 
 
-}
-
-/*.logo{
-  text-align: center;
-  color: #fff;
-  font-size: 3em;
-  font-weight: 400;
-  font-family: 'Poiret One', cursive;
 }*/
+
 
 ul{
   padding: 0;
@@ -237,32 +229,47 @@ ul{
   text-align: center;
   -webkit-transition: max-height 0.5s;
   transition: max-height 0.5s;
-  border-bottom: 1px double #b6a388;
-  border-width: 5px;
   padding-bottom: 0.7rem;
   margin-bottom: 1rem;
 
 }
 
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .nav-item{
   display: inline-block;
-  padding: 20px;
-  font-size: 1.4em;
-  /*-webkit-transition: background .5s;
-  transition: background .5s*/
+  padding: 15px;
+  font-size: 1em;
+  
+  /*border around the nav-item*/
+  list-style-position:inside;
+  border: 1.4px solid #b6a388;
+  border-radius: 10%;
+  margin: 1em 0.5em 0 0.5em;
+  
+}
+
+.nav-item a{
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  color: #756b61;
+  font-weight: bold;
 }
 
 .nav-item:hover{
-  background: #474747;
+  /*background: #474747;*/
   cursor: pointer;
 }
 
-.menu-bar{
+/*.menu-bar{
   width: 100%;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  /*background: #2d2d2d;*/
   text-align: left;
   padding: 15px 20px;
   color: #fff;
@@ -276,7 +283,7 @@ ul{
   clear: both;
   margin-top: -5px;
   font-size: 1.4em;
-}
+}*/
 
 
 /*************  END OF NAVIGATION BAR  *************/

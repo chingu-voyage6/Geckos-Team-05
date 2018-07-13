@@ -9,10 +9,10 @@ $(document).ready(function getStylesheet() {
        $("body").append("<link rel='stylesheet' href='../src/morning.css' type='text/css'>");
       }
       if (11 <= currentTime&&currentTime < 16) {
-       $("body").append("<link rel='stylesheet' href='../src/day.css' type='text/css'>");
+       $("body").append("<link rel='stylesheet' href='../src/night.css' type='text/css'>");
       }
       if (16 <= currentTime&&currentTime < 22) {
-       $("body").append("<link rel='stylesheet' href='../src/evening.css' type='text/css'>");
+       $("body").append("<link rel='stylesheet' href='../src/night.css' type='text/css'>");
       }
       if (22 <= currentTime&&currentTime <= 24) {
        $("body").append("<link rel='stylesheet' href='../src/night.css' type='text/css'>");
