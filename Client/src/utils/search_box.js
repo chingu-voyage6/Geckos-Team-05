@@ -1,6 +1,26 @@
+// BACKGROUND COLOUR
+
+$(document).ready(function getStylesheet() {
+      var currentTime = new Date().getHours();
+      if (0 <= currentTime&&currentTime < 5) {
+       $("body").append("<link rel='stylesheet' href='../src/night.css' type='text/css'>");
+      }
+      if (5 <= currentTime&&currentTime < 11) {
+       $("body").append("<link rel='stylesheet' href='../src/morning.css' type='text/css'>");
+      }
+      if (11 <= currentTime&&currentTime < 16) {
+       $("body").append("<link rel='stylesheet' href='../src/day.css' type='text/css'>");
+      }
+      if (16 <= currentTime&&currentTime < 22) {
+       $("body").append("<link rel='stylesheet' href='../src/evening.css' type='text/css'>");
+      }
+      if (22 <= currentTime&&currentTime <= 24) {
+       $("body").append("<link rel='stylesheet' href='../src/night.css' type='text/css'>");
+      }
+})
 
 
-// Function to add animatio to the search box
+// Function to add animation to the search box
 function searchToggle(obj, evt){
     var container = $(obj).closest('.search-wrapper');
         if(!container.hasClass('active')){
@@ -14,6 +34,8 @@ function searchToggle(obj, evt){
         }
 }
 
+    
+// POPUP PAGE 
     // Initialize Variables
 var closePopup = document.getElementById("popupclose");
 var overlay = document.getElementById("overlay");
@@ -24,3 +46,4 @@ closePopup.onclick = function() {
     overlay.style.display = 'none';
     popup.style.display = 'none';
 };
+
