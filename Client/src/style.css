@@ -297,10 +297,9 @@ ul{
   top: 45%;
   left: 33%;
   background: #999;
-  opacity: 0.8;
+/*  opacity: 0.9;*/
   width: 70%;
-  height: 300em;
-  margin-left: -250px; /*Half the value of width to center div*/
+  margin-left: -18%; /*Half the value of width to center div*/
   margin-top: -250px; /*Half the value of height to center div*/
   z-index: 200;
 }
@@ -309,7 +308,77 @@ ul{
   float: right;
   padding: 10px;
   cursor: pointer;
+  color: red;
 }
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  /*max-width: 1200px;*/
+  margin: 5em auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 12.5%;
+}
+
+/* Container around content */
+.container-right {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 65%;
+  left: 10%;
+  height: auto;
+}
+
+/* The circles on the timeline */
+.container-right::after {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  /*right: 7px;*/
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 16px;
+  border-radius: 50%;
+  z-index: 1;
+  left: 16px;
+}
+
+/* The actual content */
+.popup-content {
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 6px;
+  opacity: 0.8;
+ /* left: 20%;*/
+  width: 100%;
+/*  height: 18em;*/
+  margin: 10px auto;
+ /* left: 16px;*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+
+.popup-headline {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: black;
+
+}
+
 
 /*************  POP UP PAGE  ************
 
@@ -317,18 +386,25 @@ ul{
 /*************  TOP ARTICLES  *************/
 #top-articles {
   margin: 1.5em 3em;
-  display: flex;
-  flex-direction: row;
+/*  display: flex;
+*/  /*flex-direction: row;*/
+  /*align-content: space-around;*/
   border-bottom: 1px double #b6a388;
   border-width: 2px;
 }
 
  
 .clearfix {
-    overflow: auto;
-    margin: 4em 0;
-    position: relative;
+    /*overflow: auto;*/
+    /*position: relative;*/
+    margin: 4em 0;    
     padding: 3em 0;
+    /*width: 100%;
+    height: auto;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 
@@ -337,23 +413,38 @@ ul{
   font-family: 'Patua One', cursive;
   font-size: 30px;
   color: black;
+  text-align: center;
+  /*padding: auto 10px;
+  margin: auto 3px;*/
+}
+
+#top-articles p {
+  font-size: 20px;
+  text-align: center;
+  /*padding: auto 10px;
+   margin: auto 3px;*/
 }
 
 
-.right {
-  height: 18em;
+.right .image {
+  flex: 1;
+  order: 2;
 }
 
-.right img {
-  float: right;
+.right .info{
+  /*float: left;*/
+  /*display: flex;
+  justify-content: flex-start;*/
+  flex: 1;
+  order: 1;
 }
 
 
-.left {
-  height: 18em;
+.left .info{
+  flex: 1;
 }
-.left img {
-  float: left;
+.left .image {
+  flex: 1;
 }
 
 
