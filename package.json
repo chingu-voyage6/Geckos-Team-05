@@ -6,7 +6,7 @@
     "client": "cd client && yarn start",
     "server": "nodemon ./Server/app.js localhost 5000 --watch Server/",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "cd Server && npm install && node Server/app.js"
+    "start": "cd Server && npm install && node app.js"
   },
   "repository": {
     "type": "git",
