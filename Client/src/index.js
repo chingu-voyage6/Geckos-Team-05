@@ -2,24 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import registerServiceWorker from './utils/registerServiceWorker';
 
-import TopArticles from "./components/APITop.js";
-import BottomArticles from "./components/APIBottom.js";
-import SearchedArticles from "./components/PopUp.js";
+import App from "./components/App.js";
+
+
+// search box is in the header, separated from Body
+// so I rendered it with the different location 
+// ReactDOM.render(
+// 	<SearchBox />,
+// 	document.getElementById("search")
+// );
 
 ReactDOM.render(
-	<TopArticles />,
-	document.getElementById("to-render-1")
+	<App />,
+	document.getElementById("render")
 );
 
-ReactDOM.render(
-	<BottomArticles />,
-	document.getElementById("to-render-2")
-);
-
-ReactDOM.render(
-	<SearchedArticles />,
-	document.getElementById("popupcontent")
-);
 
 registerServiceWorker();
 
