@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var TestItem = require("../models/test");
+var news = require("../models/news");
 
 router.use(function(req, res, next) {
 	// TODO: update this to only add in the development mode
@@ -9,12 +9,12 @@ router.use(function(req, res, next) {
  next();
 });
 
-router.get("/api/getLatestHeadlines", (req, res) => {
+router.get("/api/category/:catName", (req, res) => {
   console.log("Request recieved to getLatestHeadlines");
-  TestItem.find({})
+  news.find({"category":req.params.catName})
   .then((data) => {
     res.send({data: data});
-    console.log(data);
+    console.log(data[0].category);
   })
   .catch((err) => {
     res.status(500).json({ success: false, msg: `Something went wrong. ${err}` });

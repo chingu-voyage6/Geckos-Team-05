@@ -25,7 +25,7 @@ class Top extends React.Component {
 
 	componentDidMount() {
 	    
-	    fetch (`${this.URLPrefix}api/getLatestHeadlines`)
+	    fetch (`${this.URLPrefix}api/category/topheadlines`)
 		    .then(results => {
 		        return results.json();
 		    }).then(data => {
