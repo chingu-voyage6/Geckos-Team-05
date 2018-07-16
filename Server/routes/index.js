@@ -10,11 +10,12 @@ router.use(function(req, res, next) {
 });
 
 router.get("/api/category/:catName", (req, res) => {
-  console.log("Request recieved to getLatestHeadlines");
-  news.find({"category":req.params.catName})
+  let catName = req.params.catName;
+  console.log("Request recieved to get latest "+catName);
+  news.find({"category":catName})
   .then((data) => {
     res.send({data: data});
-    console.log(data[0].category);
+    console.log("Response sent to get latest "+catName);
   })
   .catch((err) => {
     res.status(500).json({ success: false, msg: `Something went wrong. ${err}` });
