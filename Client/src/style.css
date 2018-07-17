@@ -300,7 +300,7 @@ ul{
 }
 */
 
-.overlay {
+#overlay {
   display: none;
 }
 .popup {
@@ -395,7 +395,7 @@ ul{
 
 
 /*************  TOP ARTICLES  *************/
-#top-articles {
+.top-articles {
   margin: 1.5em 3em;
   /*border-bottom: 1px double #b6a388;*/
   border-width: 2px;

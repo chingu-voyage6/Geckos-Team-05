@@ -1,26 +1,39 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 
 class SearchBox extends React.Component {
-	constructor () {
-		super ();
-		this.state = {
-			input : ''
-		};
-		this.handleChange = this.handleChange.bind(this)
+	constructor (props) {
+		super (props);
+		this.handleChange = this.handleChange.bind(this);
+		this.handleKeyPress = this.handleKeyPress.bind(this);
 		this.searchToggle = this.searchToggle.bind(this);
+
 	}
 
+
+	// To handle change from user input and call the parent (which is SearchPanel.js)
 	handleChange(event) {
-		this.setState({input: event.target.value})
+		// this.setState({input: event.target.value})
+		this.props.onChange(event);
 	}
 
-	searchToggle(evt){
+	// To handle enter when user searches for a keyword and hit ENTER
+	handleKeyPress (event) {
+		if (event.key == 'Enter'){
+			console.log('Pressed enter');
+			this.props.onChange(event);
+
+		}
+	}
+
+	searchToggle(event){
 	    var container = $('.search-wrapper');
+	    // TODO
+	    // should have an extra check to see which container to add/remove class
 	    
 	    if(!container.hasClass('active')){
 	        container.addClass('active');
-	        evt.preventDefault();
+	        event.preventDefault();
 	    }
 	    else if(container.hasClass('active')){
 	        container.removeClass('active');
@@ -33,7 +46,7 @@ class SearchBox extends React.Component {
 		return (
 			<div className="search-wrapper">
 				<div className="input-holder">
-					<input type="text" className="search-input" placeHolder="Type to search" value={this.state.input} onChange={this.handleChange}/>
+					<input type="text" className="search-input" placeholder="Type to search" value={this.props.input} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
 					<button className="search-icon" onClick={this.searchToggle}><span></span></button>
 				</div>
 	    		<span className="close" onClick={this.searchToggle}></span>
