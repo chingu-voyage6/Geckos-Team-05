@@ -1,35 +1,10 @@
 var express = require("express");
 var router = express.Router();
-<<<<<<< HEAD
-var mongoose = require("mongoose");
-
-var TestItem = require("../models/test");
-=======
 var news = require("../models/news");
->>>>>>> master
 
 
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI(process.env.API_KEY);
-<<<<<<< HEAD
-
-var refresh = function(){
-  // Delete existing data before seeding
-  TestItem.collection.drop();
-  newsapi.v2.topHeadlines({
-  country:"gb",
-  pageSize:9
-}).then(response => {
-  response.articles.forEach(function(article) {
-    var obj = new TestItem(article);
-    obj.save();
-  });
-});
-}
-refresh();
-setInterval(refresh, 900000);
-
-=======
 const tagList = ["business","entertainment","general","health","science","sports","technology"];
 
 var refresh = function(){
@@ -91,5 +66,4 @@ setInterval(refresh, 900000);
 refreshCategory();
 setInterval(refreshCategory, 1800000)
 
->>>>>>> master
 module.exports = router;

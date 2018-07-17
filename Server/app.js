@@ -19,10 +19,8 @@ var apiRoutes = require("./routes/api");
 // Run application
 app.use(indexRoutes);
 app.use(apiRoutes);
-<<<<<<< HEAD
-=======
 
->>>>>>> master
+
 app.use(function(req, res) {
   res.render("404");
 });
