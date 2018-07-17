@@ -15,14 +15,14 @@ var refresh = function(){
   var count = 0;
   // Delete existing data before seeding
   news.collection.remove({"category":"topheadlines"});
-    if(count<9){
-        response.articles.forEach(function(article) {
-          article["category"] = "topheadlines";
-          var obj = new news(article);
-          obj.save();
-          count++;
-        });
-      }
+  response.articles.forEach(function(article) {
+  if(count<9){
+    article["category"] = "topheadlines";
+    var obj = new news(article);
+    obj.save();
+    count++;
+  }
+  });
 })
 .catch((err) => {
   console.log(err);
