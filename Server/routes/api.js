@@ -1,7 +1,5 @@
 var express = require("express");
 var router = express.Router();
-var mongoose = require("mongoose");
-
 var news = require("../models/news");
 
 
@@ -11,48 +9,54 @@ const tagList = ["business","entertainment","general","health","science","sports
 
 var refresh = function(){
   newsapi.v2.topHeadlines({
-  language: "en",
-  pageSize:9
+  country: "gb",
+  pageSize:99
 }).then(response => {
-  if(response.status =="ok") {
-    // Delete existing data before seeding
-    news.collection.remove({"category":"topheadlines"});
-    response.articles.forEach(function(article) {
-      article["category"] = "topheadlines";
-      var obj = new news(article);
-      obj.save();
-    });
-  }
-  else {
-    console.log(response.message);
-  }
+  var count = 0;
+  // Delete existing data before seeding
+  news.collection.remove({"category":"topheadlines"});
+    if(count<9){
+        response.articles.forEach(function(article) {
+          article["category"] = "topheadlines";
+          var obj = new news(article);
+          obj.save();
+          count++;
+        });
+      }
+})
+.catch((err) => {
+  console.log(err);
 });
 }
 
 var updateCategory = function(catName) {
   newsapi.v2.topHeadlines({
     category: catName,
-    language: "en",
-    pageSize:9
+    country: "gb",
+    pageSize:99
   }).then(response => {
-    if(response.status =="ok") {
-      // Delete existing data before seeding
-      news.collection.remove({"category":catName});
-      response.articles.forEach(function(article) {
-        article["category"] = catName;
-        var obj = new news(article);
-        obj.save();
-      });
-    }
-    else {
-      console.log(response.message);
-    }
+    // Delete existing data before seeding
+    var count = 0;
+    news.collection.remove({"category":catName});
+    response.articles.forEach(function(article) {
+      if(count<9){
+        if(article.urlToImage&&article.description){
+          article["category"] = catName;
+          var obj = new news(article);
+          obj.save();
+          count++;
+        }
+      }
+    });
+  })
+  .catch((err) => {
+    console.log(err);
   });
 }
 
 var refreshCategory = function() {
-  tagList.forEach(function(catagory) {
-    updateCategory(catagory);
+  tagList.forEach(function(category) {
+    updateCategory(category);
   });
 }
 

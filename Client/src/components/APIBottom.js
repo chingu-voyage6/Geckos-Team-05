@@ -23,7 +23,7 @@ class Bottom extends React.Component {
 	}
 
 	componentDidMount () {
-		fetch (`${this.URLPrefix}api/category/sports`)
+		fetch (`${this.URLPrefix}api/category/topheadlines`)
 		    .then(results => {
 		        return results.json();
 		    }).then(data => {

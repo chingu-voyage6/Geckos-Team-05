@@ -14,15 +14,11 @@ mongoose.connect(process.env.MONGODB_URI);
 var indexRoutes = require("./routes/index");
 
 // Require application api routes
-//var apiRoutes = require("./routes/api");
+var apiRoutes = require("./routes/api");
 
 // Run application
 app.use(indexRoutes);
-//app.use(apiRoutes);
-
-//Require database test
-// var dbTest = require("./routes/db-test");
-// app.use(dbTest);
+app.use(apiRoutes);
 
 app.use(function(req, res) {
   res.render("404");
