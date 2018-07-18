@@ -47,7 +47,6 @@ class PopUpArticles extends React.Component {
 						)
 					}
 				})	
-			// this.setState({PopUpComponents: PopUpComponents});
 			return (
 		     <div className ="searched-articles">
 		     	<div className="timeline">

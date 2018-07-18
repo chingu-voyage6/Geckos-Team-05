@@ -1,6 +1,7 @@
 import React from 'react';
 import PopUpArticles from "./PopUpArticles.js";
 import SearchBox from "./SearchBox.js";
+import Categories from "./Categories.js";
 
 
 class SearchPanel extends React.Component {
@@ -63,7 +64,9 @@ class SearchPanel extends React.Component {
 
 	render (){
 		return (
-			<div>			
+			<div className="nav-bar">
+				<Categories 
+					chooseCategory = {this.props.chooseCategory} />		
 				<SearchBox 
 					input={this.state.inputToSearchBox}
 					onChange={this.onChange}
