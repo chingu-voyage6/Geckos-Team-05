@@ -20,6 +20,7 @@ var apiRoutes = require("./routes/api");
 app.use(indexRoutes);
 app.use(apiRoutes);
 
+
 //Test rotuer
 var testIndexRoutes = require("./routes/test/index-test");
 app.use(testIndexRoutes);
@@ -27,6 +28,7 @@ app.use(testIndexRoutes);
 //Require database test
 // var dbTest = require("./routes/db-test");
 // app.use(dbTest);
+
 
 app.use(function(req, res) {
   res.render("404");
