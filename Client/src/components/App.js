@@ -10,13 +10,39 @@ class App extends React.Component {
 	constructor (props) {
 		super (props);
 		this.state = {
+			resultsCategory : [],
 			chosenCategory: undefined
 		}
 		this.chooseCategory = this.chooseCategory.bind(this);
+
+		// Create dev environment variables
+		var nodeEnv = process.env.NODE_ENV || "development";
+		if (nodeEnv === "development") {
+			this.URLPrefix = "http://localhost:5000/";
+		} else {
+			this.URLPrefix = "";
+		}
 	}
 
 	chooseCategory (e) {
-		this.setState ({chosenCategory: e.target.innerHTML});
+
+		let input = e.target.innerHTML.toLowerCase();
+		this.setState ({chosenCategory: input});
+
+		this.fetchCategoryAPI (input);
+	}
+
+	fetchCategoryAPI (input) {
+		
+		// console.log(this.props.chosenCategory.toLowerCase());
+		fetch (`${this.URLPrefix}api/category/${input}`)
+		    .then(results => {
+		        return results.json();
+		    }).then(data => {
+		    	// this is where the data JSON file is stored
+		    	let resultsCategory = data.data;
+		    	this.setState({resultsCategory: resultsCategory});
+		    });
 	}
 
 	render (){
@@ -28,7 +54,7 @@ class App extends React.Component {
 						chooseCategory = {this.chooseCategory}
 					/>	
 				</header>
-				{this.state.chosenCategory? <ChosenCategoryResults chosenCategory = {this.state.chosenCategory}/> : 
+				{this.state.chosenCategory? <ChosenCategoryResults resultsCategory = {this.state.resultsCategory}/> : 
 					(<div>
 						<div id="top-articles">
 							<TopArticles /> 

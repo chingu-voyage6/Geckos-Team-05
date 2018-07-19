@@ -90,8 +90,8 @@ class Top extends React.Component {
 class TopArticles extends React.Component {
 	constructor(props){
 	    super(props);
-	    console.log(`these are`);
-	    console.log(this.props)
+	    // console.log(`these are`);
+	    // console.log(this.props)
 	 }
 
 	render() {
