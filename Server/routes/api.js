@@ -15,10 +15,7 @@ var refresh = function(){
   var count = 0;
   // Delete existing data before seeding
   news.collection.remove({"category":"topheadlines"});
-  var art = response.articles.sort(function (a, b) {
-    return Date.parse(b.publishedAt) - Date.parse(a.publishedAt)
-  });
-  art.forEach(function(article) {
+  response.articles.forEach(function(article) {
     if(count<9){
       if(article.urlToImage){
         article.category = "topheadlines";
@@ -44,10 +41,7 @@ var updateCategory = function(catName) {
     // Delete existing data before seeding
     var count = 0;
     news.collection.remove({"category":catName});
-    var art = response.articles.sort(function (a, b) {
-      return Date.parse(b.publishedAt) - Date.parse(a.publishedAt)
-    });
-    art.forEach(function(article) {
+    response.articles.forEach(function(article) {
       if(count<9){
         if(article.urlToImage){
           article.publishedAt = timeStampToDate(article.publishedAt);
