@@ -1,8 +1,10 @@
 var express = require("express");
 var router = express.Router();
 var news = require("../models/news");
-
+var dateFormat = require('dateformat');
 const NewsAPI = require('newsapi');
+
+
 const newsapi = new NewsAPI(process.env.API_KEY);
 
 router.use(function(req, res, next) {
@@ -30,15 +32,24 @@ router.get("/api/search/:query", (req, res) => {
   console.log("Request recieved to get results for " + query);
   newsapi.v2.topHeadlines({
     q: query,
-    pageSize: 9
+    pageSize: 100
   }).then(response => {
     let array = response.articles;
+    array.forEach(function(article) {
+      article.publishedAt = timeStampToDate(article.publishedAt);
+    });
     res.send({data: array});
-    console.log("Response sent to get results for " + query);
+    console.log("Response sent to get latest results for " + query);
   })
   .catch((err) => {
     res.status(500).json({ success: false, msg: `Something went wrong. ${err}` });
   });
 });
+
+function timeStampToDate (timeStamp) {
+  let date = new Date (timeStamp);
+  let formatedDate = dateFormat (date, "mmm dd @ HH:MM");
+  return formatedDate;
+}
 
 module.exports = router;
