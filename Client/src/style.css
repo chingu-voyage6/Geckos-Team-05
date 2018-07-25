@@ -1,3 +1,4 @@
+
 /******* GOOGLE FONTS *******/
 @import url("https://fonts.googleapis.com/css?family=Patua+One");
 
@@ -325,7 +326,6 @@ ul{
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
-  /*max-width: 1200px;*/
   margin: 5em auto;
 }
 
@@ -337,49 +337,35 @@ ul{
   background-color: white;
   top: 0;
   bottom: 0;
-  left: 12.5%;
+  left: 10%;
 }
 
-/* Container around content */
-.container-right {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 65%;
-  left: 10%;
-  height: auto;
-}
 
 /* The circles on the timeline */
-.container-right::after {
+.popup-content::after {
   content: '';
   position: absolute;
   width: 26px;
   height: 26px;
-  /*right: 7px;*/
   background-color: white;
   border: 4px solid #FF9F55;
   top: 16px;
   border-radius: 50%;
   z-index: 1;
-  left: 16px;
+  left: 10%;
 }
 
 /* The actual content */
 .popup-content {
+  width: 60%; 
   padding: 20px 30px;
   background-color: white;
   border-radius: 6px;
   opacity: 0.8;
- /* left: 20%;*/
-  width: 100%;
-/*  height: 18em;*/
-  margin: 10px auto;
- /* left: 16px;*/
+  margin: 2em auto;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 
@@ -387,20 +373,28 @@ ul{
   font-size: 1.4em;
   font-weight: bold;
   color: black;
-
+  text-align: center;
 }
 
+.popup-info {
+  padding: 0 2em;
+}
 
-/*************  POP UP PAGE  ************
+.popup-p {
+  text-align: center;
+}
+.date {
+  font-size: 32px;
+}
+
+/************* END OF POP UP PAGE  ************
 
 
 /*************  TOP ARTICLES  *************/
 .top-articles {
   margin: 1.5em 3em;
-  /*border-bottom: 1px double #b6a388;*/
   border-width: 2px;
 }
-
  
 .clearfix {
     margin: 2em 0;    
@@ -409,10 +403,8 @@ ul{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
-
-
 
 #top-articles h3 {
   font-family: 'Patua One', cursive;
@@ -431,6 +423,7 @@ ul{
 .right .image {
   flex: 1;
   order: 2;
+  text-align: center;
 }
 
 .right .info{
@@ -444,8 +437,12 @@ ul{
 
 .left .image {
   flex: 1;
+  text-align: center;
 }
 
+.button {
+  margin-left: 45%;
+}
 
 
 

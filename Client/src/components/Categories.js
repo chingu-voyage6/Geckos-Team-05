@@ -9,10 +9,11 @@ class Categories extends React.Component {
 		const {chooseCategory} = this.props;
 		return (
 			<ul className="categories">
-				<li className="nav-item" onClick = {this.props.chooseCategory}><a href="#" >LIVE</a></li>
-				<li className="nav-item" onClick = {this.props.chooseCategory}><a href="#">BUSINESS</a></li>
-			    <li className="nav-item" onClick = {this.props.chooseCategory}><a href="#" >TECH</a></li>
-			    <li className="nav-item" onClick = {this.props.chooseCategory}><a href="#" >LIFESTYLE</a></li>
+				<li className="nav-item"><a href="#" onClick = {this.props.chooseCategory}>TOP LIVE</a></li>
+				<li className="nav-item"><a href="#" onClick = {this.props.chooseCategory}>BUSINESS</a></li>
+			    <li className="nav-item"><a href="#" onClick = {this.props.chooseCategory}>SPORTS</a></li>
+			    <li className="nav-item"><a href="#" onClick = {this.props.chooseCategory}>TECHNOLOGY</a></li>
+			    <li className="nav-item"><a href="#" onClick = {this.props.chooseCategory}>HEALTH</a></li>
 			</ul>
 		)
 	}

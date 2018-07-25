@@ -1,4 +1,5 @@
 import React from 'react';
+import date_utils from '../utils/date_utils';
 
 
 
@@ -23,6 +24,7 @@ class PopUpArticles extends React.Component {
 	render() {
 			 	let arr = this.props.resultArticles;
 				let PopUpComponents = arr.map((val) => {
+
 					if (val.urlToImage == null ) {
 						return (
 							<SearchedResults 
@@ -31,7 +33,7 @@ class PopUpArticles extends React.Component {
 					          headline = {val.title}
 					          content = {val.description}
 					          linkUrl = {val.url}
-					          date = {val.publishedAt}
+					          date = {date_utils.timeStampToDate(val.publishedAt)}
 					   		/>	
 						)
 					} else {
@@ -42,7 +44,7 @@ class PopUpArticles extends React.Component {
 						          headline = {val.title}
 						          content = {val.description}
 						          linkUrl = {val.url}
-						          date = {val.publishedAt}
+						          date = {date_utils.timeStampToDate(val.publishedAt)}
 						    />							
 						)
 					}
@@ -65,17 +67,18 @@ class SearchedResults extends React.Component {
  }
   render() {
     return (
-      	<div className = "container-right">
-      	  <div className = "popup-content" key={this.props.id}>
+      	<div className = "popup-content" key={this.props.id}>
 	          <div className='popup-info'>
+	          	  <div className = "date">
+		      	  	  {this.props.date}
+		      	  </div>
 	             <h5 className="popup-headline">{this.props.headline}</h5>
-	             <p className ="popup-content">{this.props.content}</p>
+	             <p className ="popup-p">{this.props.content}</p>
 	             <a href={this.props.linkUrl}>Read More</a>
 	          </div>
 	          <div className='popup-image'>
 	            <img src={this.props.imageUrl} width={370} height={240}/>
 	          </div>	  
-	      </div>
 	    </div>
     );
   }

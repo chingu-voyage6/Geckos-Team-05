@@ -1,4 +1,6 @@
 import React from 'react';
+import date_utils from '../utils/date_utils';
+
 
 class ChosenCategoryResults extends React.Component {
 	constructor (props){
@@ -6,20 +8,14 @@ class ChosenCategoryResults extends React.Component {
 		this.state = {
 			array: []
 			// chosenCategory: []
-		}
+		}		
 
-		// Create dev environment variables
-		var nodeEnv = process.env.NODE_ENV || "development";
-		if (nodeEnv === "development") {
-			this.URLPrefix = "http://localhost:5000/";
-		} else {
-			this.URLPrefix = "";
-		}
 	}
-
 
 	render () {
 				let array = this.props.resultsCategory;
+				console.log('chosenCategory is:');
+				console.log(array);
 				let CategoryComponents = array.map((val) => {
 					if (val.urlToImage == null ) {
 						return (
@@ -29,7 +25,7 @@ class ChosenCategoryResults extends React.Component {
 					          headline = {val.title}
 					          content = {val.description}
 					          linkUrl = {val.url}
-					          date = {val.publishedAt}
+					          date = {date_utils.timeStampToDate(val.publishedAt)}
 					   		/>	
 						)
 					} else {
@@ -40,7 +36,7 @@ class ChosenCategoryResults extends React.Component {
 						          headline = {val.title}
 						          content = {val.description}
 						          linkUrl = {val.url}
-						          date = {val.publishedAt}
+						          date = {date_utils.timeStampToDate(val.publishedAt)}
 						    />							
 						)
 					}
@@ -60,23 +56,27 @@ class ChosenCategoryResults extends React.Component {
 class SearchedResults extends React.Component {
   constructor(props){
     super(props);
- }
+  }
+
   render() {
     return (
-      	<div className = "container-right">
       	  <div className = "popup-content" key={this.props.id}>
 	          <div className='popup-info'>
+	          	  <div className = "date">
+		      	  	  {this.props.date}
+		      	  </div>
 	             <h5 className="popup-headline">{this.props.headline}</h5>
-	             <p className ="popup-content">{this.props.content}</p>
+	             <p className ="popup-p">{this.props.content}</p>
 	             <a href={this.props.linkUrl}>Read More</a>
 	          </div>
 	          <div className='popup-image'>
 	            <img src={this.props.imageUrl} width={370} height={240}/>
 	          </div>	  
 	      </div>
-	    </div>
+	    
     );
   }
 }
 
 export default ChosenCategoryResults;
+

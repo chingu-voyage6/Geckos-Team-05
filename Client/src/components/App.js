@@ -22,6 +22,7 @@ class App extends React.Component {
 		} else {
 			this.URLPrefix = "";
 		}
+
 	}
 
 	chooseCategory (e) {
@@ -54,7 +55,7 @@ class App extends React.Component {
 						chooseCategory = {this.chooseCategory}
 					/>	
 				</header>
-				{this.state.chosenCategory? <ChosenCategoryResults resultsCategory = {this.state.resultsCategory}/> : 
+				{(this.state.chosenCategory && this.state.chosenCategory!=="top live")? <ChosenCategoryResults resultsCategory = {this.state.resultsCategory}/> : 
 					(<div>
 						<div id="top-articles">
 							<TopArticles /> 
