@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme",
   "dependencies": {
+    "webpack": "^4.12.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
