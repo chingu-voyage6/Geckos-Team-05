@@ -22,7 +22,7 @@ var apiRoutes = require("./routes/api");
 app.use(express.static(path.join(__dirname, "../Client/build")));
 
 app.get("/", (req, res) => {
-  var file = path.join(__dirname + "../Client/build/index.html");
+  var file = path.join(__dirname, "../Client/build/index.html");
   res.sendFile(file);
   console.log(file);
 });
