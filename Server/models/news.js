@@ -1,7 +1,8 @@
 var mongoose = require("mongoose");
 
 // Test Schema & Model Setup
-  var testItemSchema = new mongoose.Schema({
+  var newsSchema = new mongoose.Schema({
+    category: String,
     source: Object,
     author: String,
     title: String,
@@ -11,4 +12,4 @@ var mongoose = require("mongoose");
     publishedAt: String
   });
 
-  module.exports = mongoose.model("TestItem", testItemSchema);
+  module.exports = mongoose.model("news", newsSchema);

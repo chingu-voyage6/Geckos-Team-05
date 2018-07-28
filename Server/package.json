@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme",
   "dependencies": {
+    "dateformat": "^3.0.3",
     "dotenv": "^6.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
