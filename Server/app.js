@@ -21,11 +21,11 @@ var apiRoutes = require("./routes/api");
 // app.use(express.static("../Client/build"));
 app.use(express.static(path.join(__dirname, "../Client/build")));
 
-app.get("/", (req, res) => {
-  var file = path.join(__dirname, "../Client/build/index.html");
-  res.sendFile(file);
-  console.log(file);
-});
+// app.get("/", (req, res) => {
+//   var file = path.join(__dirname, "../Client/build/index.html");
+//   res.sendFile(file);
+//   console.log(file);
+// });
 
 // Run application
 app.use(indexRoutes);
