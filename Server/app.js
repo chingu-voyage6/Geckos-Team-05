@@ -20,10 +20,5 @@ var apiRoutes = require("./routes/api");
 app.use(indexRoutes);
 app.use(apiRoutes);
 
-
-app.use(function(req, res) {
-  res.render("404");
-});
-
 var port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`App running on port ${port}`));
