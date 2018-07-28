@@ -16,6 +16,9 @@ var indexRoutes = require("./routes/index");
 // Require application api routes
 var apiRoutes = require("./routes/api");
 
+// Point Node to React build files
+app.use(express.static("../Client/build"));
+
 // Run application
 app.use(indexRoutes);
 app.use(apiRoutes);
