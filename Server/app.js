@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+var path = require("path");
 var mongoose = require("mongoose");
 
 // Create dev environment variables
@@ -17,7 +18,8 @@ var indexRoutes = require("./routes/index");
 var apiRoutes = require("./routes/api");
 
 // Point Node to React build files
-app.use(express.static("../Client/build"));
+// app.use(express.static("../Client/build"));
+app.use(express.static(path.join(__dirname, '/Client/build')));
 
 // Run application
 app.use(indexRoutes);
