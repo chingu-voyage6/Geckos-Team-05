@@ -10,15 +10,15 @@ class Bottom extends React.Component {
 			arr: [],
 			bottomComponents: [],
 			defaultImg: ('../../assets/updating.jpg')
-			
+
 		}
 
 		// Create dev environment variables
-		var nodeEnv = process.env.NODE_ENV || "development";
+		var nodeEnv = process.env.NODE_ENV || "production";
 		if (nodeEnv === "development") {
 			this.URLPrefix = "http://localhost:5000/";
 		} else {
-			this.URLPrefix = "";
+			this.URLPrefix = "https://the-new-news.herokuapp.com/";
 		}
 	}
 
@@ -41,33 +41,33 @@ class Bottom extends React.Component {
 				let bottomComponents = arr.map((val) => {
 					if (val.urlToImage == null ) {
 						return (
-							<BottomArticles 
+							<BottomArticles
 							  id = {val.source.id + val.publishedAt}
 							  imageUrl = {this.state.defaultImg}
 					          headline = {val.title}
 					          content = {val.description}
 					          linkUrl = {val.url}
 					          date = {val.publishedAt}
-					   		/>	
+					   		/>
 						)
 					} else {
 						return (
-							<BottomArticles 
+							<BottomArticles
 								  id = {val.source.id + val.publishedAt}
 								  imageUrl = {val.urlToImage}
-						          
+
 						          headline = {val.title}
 						          content = {val.description}
 						          linkUrl = {val.url}
 						          date = {val.publishedAt}
-						    />							
+						    />
 						)
 					}
-				})	
+				})
 			this.setState({bottomComponents: bottomComponents});
-					
+
 			})
-			
+
 	}
 
 	render (){

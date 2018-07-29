@@ -11,20 +11,20 @@ class Top extends React.Component {
 			array: [],
 			topComponents: [],
 			defaultImg: ('../../assets/updating.jpg'),
-			
+
 		}
 
 		// Create dev environment variables
-		var nodeEnv = process.env.NODE_ENV || "development";
+		var nodeEnv = process.env.NODE_ENV || "production";
 		if (nodeEnv === "development") {
 			this.URLPrefix = "http://localhost:5000/";
 		} else {
-			this.URLPrefix = "";
+			this.URLPrefix = "https://the-new-news.herokuapp.com/";
 		}
 	}
 
 	componentDidMount() {
-	    
+
 	    fetch (`${this.URLPrefix}api/category/topheadlines`)
 		    .then(results => {
 		        return results.json();
@@ -39,7 +39,7 @@ class Top extends React.Component {
 
 				// only use the first 3 articles to be displayed on the screen
 			 	array = array.slice(0,3);
-			 	let counter = 0; 
+			 	let counter = 0;
 			 	// console.log(array);
 				let topComponents = array.map((val) => {
 					//set counter to add class right or left to the top articles
@@ -50,7 +50,7 @@ class Top extends React.Component {
 					}
 					if (val.urlToImage == null ) {
 						return (
-							<TopArticles 
+							<TopArticles
 							  id = {val.source.id + val.publishedAt}
 							  imageUrl = {this.state.defaultImg}
 					          headline = {val.title}
@@ -58,11 +58,11 @@ class Top extends React.Component {
 					          linkUrl = {val.url}
 					          date = {val.publishedAt}
 					          position = {sideClass}
-					   		/>	
+					   		/>
 						)
 					} else {
 						return (
-							<TopArticles 
+							<TopArticles
 								  id = {val.source.id + val.publishedAt}
 								  imageUrl = {val.urlToImage}
 						          headline = {val.title}
@@ -70,15 +70,15 @@ class Top extends React.Component {
 						          linkUrl = {val.url}
 						          date = {val.publishedAt}
 						          position = {sideClass}
-						    />							
+						    />
 						)
 					}
-				})	
+				})
 			this.setState({topComponents: topComponents});
 			})
 
-			
-					
+
+
 	}
 
 	render (){
@@ -119,4 +119,3 @@ class TopArticles extends React.Component {
 
 
 export default Top;
-
