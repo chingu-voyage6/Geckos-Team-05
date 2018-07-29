@@ -64,14 +64,14 @@ class SearchPanel extends React.Component {
 	}
 
 	fetchKeywordAPI (input) {
-		fetch (`${this.URLPrefix}api/getArticlesByKeywords?keyword=${input}`)
+		fetch (`${this.URLPrefix}api/search/${input}`)
 		// fetch (`${this.URLPrefix}api/getArticlesByKeywords?keyword=${this.state.inputToPopUp}`)
 		    .then(results => {
 		        return results.json();
 		    }).then(data => {
 		    	// this is where the data JSON file is stored
 		    	let arr = data.data;
-		    	this.setState({resultArticles: arr.articles});
+		    	this.setState({resultArticles: arr});
 		    });
 	}
 

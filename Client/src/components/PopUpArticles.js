@@ -23,6 +23,7 @@ class PopUpArticles extends React.Component {
 
 	render() {
 			 	let arr = this.props.resultArticles;
+			 	arr = arr.slice(0,6);
 				let PopUpComponents = arr.map((val) => {
 
 					if (val.urlToImage == null ) {
