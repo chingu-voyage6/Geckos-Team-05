@@ -10,8 +10,7 @@ class Top extends React.Component {
 		this.state = {
 			array: [],
 			topComponents: [],
-			defaultImg: ('../../assets/updating.jpg'),
-
+			defaultImg: ('../../assets/updating.jpg')
 		}
 
 		// Create dev environment variables
@@ -75,10 +74,7 @@ class Top extends React.Component {
 					}
 				})
 			this.setState({topComponents: topComponents});
-			})
-
-
-
+			})					
 	}
 
 	render (){
@@ -93,25 +89,20 @@ class Top extends React.Component {
 class TopArticles extends React.Component {
 	constructor(props){
 	    super(props);
-
-	    console.log(`these are`);
-	    console.log(this.props)
 	 }
 
 	render() {
 	    return (
-	      <div key={this.props.id}>
-	        <div className={['clearfix', this.props.position].join(' ')}>
+	        <div className={['clearfix', this.props.position].join(' ') }>
 	          <div className='image'>
-	            <img src={this.props.imageUrl} width={400} height={320}/>
+	            <img src={this.props.imageUrl} width={450} height={320}/>
 	          </div>
 	          <div className='info'>
 	             <h3 className="headline">{this.props.headline}</h3>
 	             <p className ="content">{this.props.content}</p>
-	             <a href={this.props.linkUrl}>Read More</a>
+	             <a className="button" href={this.props.linkUrl}>Read More</a>
 	          </div>
 	        </div>
-	      </div>
 	    );
 	}
 }

@@ -26,6 +26,11 @@
   },
   "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme",
   "dependencies": {
+    "dateformat": "^3.0.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-react": "^6.24.1",
