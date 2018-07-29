@@ -5,7 +5,9 @@
   "scripts": {
     "client": "cd Client && yarn start",
     "server": "nodemon ./Server/app.js localhost 5000 --watch Server/",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start": "cd Server && npm install && node app.js",
+    "heroku-postbuild": "cd Client && npm install && npm run build"
   },
   "repository": {
     "type": "git",

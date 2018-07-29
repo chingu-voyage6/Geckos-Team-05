@@ -71,7 +71,7 @@ body {
 }
 .search-wrapper.active {}
 
-.search-wrapper .input-holder {    
+.search-wrapper .input-holder {
     height: 70px;
     width:70px;
     overflow: hidden;
@@ -144,7 +144,7 @@ body {
     transform: rotate(-45deg);
 }
 .search-wrapper .input-holder .search-icon span::before, .search-wrapper .input-holder .search-icon span::after {
-    position: absolute; 
+    position: absolute;
     content:'';
 }
 .search-wrapper .input-holder .search-icon span::before {
@@ -323,7 +323,7 @@ ul{
   border-width: 2px;
 }
 
- 
+
 .clearfix {
     overflow: auto;
     margin: 4em 0;
@@ -398,4 +398,4 @@ ul{
   margin: 1.2em 0.6em;
 }
 
-/*************  END OF ARTICLES  ************
+/* ************  END OF ARTICLES  ************ */

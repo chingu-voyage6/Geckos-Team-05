@@ -14,7 +14,11 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: "babel-loader"
-			}
+			},
+			{
+        test:/\.css$/,
+        use:['style-loader','css-loader']
+      }
 		]
 	},
 	output: {
@@ -22,7 +26,7 @@ module.exports = {
 		path: __dirname + "/build"
 	},
 	plugins: [
-		HTMLWebpackPluginConfig, 
+		HTMLWebpackPluginConfig,
 		new webpack.HotModuleReplacementPlugin(
 			{     multiStep: false   }
 		)
@@ -30,19 +34,17 @@ module.exports = {
 
 	mode : 'development',
 	devServer: {
-		historyApiFallback: true, 	 
-		hot: true, 	  
-		inline: true, 	  
-		host: 'localhost', 
-		// Defaults to `localhost` 	  
-		port: 3010, // Defaults to 8080 	  
-		proxy: { 	    
-			'^/api/*': { 	      
-				target: 'http://localhost:5000/api/', 	      
-				secure: false 	    
-			}	 	  
-		} 	
+		historyApiFallback: true,
+		hot: true,
+		inline: true,
+		host: 'localhost',
+		// Defaults to `localhost`
+		port: 3010, // Defaults to 8080
+		proxy: {
+			'^/api/*': {
+				target: 'http://localhost:5000/api/',
+				secure: false
+			}
+		}
 	}
 };
-
-
