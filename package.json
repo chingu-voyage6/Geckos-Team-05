@@ -19,5 +19,6 @@
   "homepage": "https://github.com/chingu-voyage6/Geckos-Team-05#readme",
   "devDependencies": {
     "concurrently": "^3.6.0"
-  }
+  },
+  "dependencies": {}
 }

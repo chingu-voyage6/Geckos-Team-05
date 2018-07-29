@@ -37,7 +37,7 @@ class Bottom extends React.Component {
 
 				// only use the first 3 articles to be displayed on the screen
 			 	arr = arr.slice(3);
-			 	console.log(arr);
+			 	// console.log(arr);
 				let bottomComponents = arr.map((val) => {
 					if (val.urlToImage == null ) {
 						return (
