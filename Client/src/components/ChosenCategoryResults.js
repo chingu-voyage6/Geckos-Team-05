@@ -6,7 +6,8 @@ class ChosenCategoryResults extends React.Component {
 	constructor (props){
 		super (props);
 		this.state = {
-			array: []
+			array: [],
+			defaultImg: ('../../assets/updating.jpg')
 			// chosenCategory: []
 		}		
 

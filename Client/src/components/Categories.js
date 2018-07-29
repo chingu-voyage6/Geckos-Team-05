@@ -7,6 +7,7 @@ class Categories extends React.Component {
 	render () {
 		// new syntax to define this.props
 		const {chooseCategory} = this.props;
+
 		return (
 			<ul className="categories">
 				<li className="nav-item"><a href="#" onClick = {this.props.chooseCategory}>TOP LIVE</a></li>
@@ -19,4 +20,4 @@ class Categories extends React.Component {
 	}
 }
 
-export default Categories;
+export default Categories; 

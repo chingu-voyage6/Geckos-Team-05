@@ -10,7 +10,7 @@ class Top extends React.Component {
 		this.state = {
 			array: [],
 			topComponents: [],
-			defaultImg: ('../../assets/updating.jpg'),
+			defaultImg: ('../../assets/updating.jpg')
 			
 		}
 
