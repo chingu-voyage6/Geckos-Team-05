@@ -4,23 +4,12 @@
 
 
 
-/*body{
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  line-height: 1.4em;
-  color: #FFFDD0;
-  background: #FFFFF0;
-  font-family: 'Lato', sans-serif;
-}*/
-
 html {
   background-color: #70808b;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23e8e6ec' fill-opacity='0.34'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 body {
-  /*position: relative;*/
   font-family: "Playfair Display", serif;
   width: 75%;
   margin: 6em auto;
@@ -68,9 +57,6 @@ body {
 
 .search-wrapper {
     transform: translate(50%, 50%);
-    /*style the icon box to be on the same line as the LI*/
-    /*margin-top: -7%;
-    margin-left: -3%;*/
 }
 .search-wrapper.active {}
 
@@ -210,15 +196,6 @@ header{
   padding: 20px;
 }
 
-/*nav{
-  width: 100%;
-  margin-bottom: 1em;
-  font-family: 'Poiret One', cursive;
-  display: inline-block;
-
-
-}*/
-
 
 ul{
   padding: 0;
@@ -260,46 +237,16 @@ ul{
 }
 
 .nav-item:hover{
-  /*background: #474747;*/
   cursor: pointer;
 }
 
-/*.menu-bar{
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-  text-align: left;
-  padding: 15px 20px;
-  color: #fff;
-  font-size: 1.4em;
-  cursor: pointer;
-  display: none;
-}
 
-.hamburger-icon{
-  float: right;
-  clear: both;
-  margin-top: -5px;
-  font-size: 1.4em;
-}*/
 
 
 /*************  END OF NAVIGATION BAR  *************/
 
 /*************  POP UP PAGE  *************/
 
-/*#overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  background: #999;
-  width: 100%;
-  height: 100%;
-  opacity: 0.8;
-  z-index: 100;
-}
-*/
 
 #overlay {
   display: none;
@@ -309,10 +256,9 @@ ul{
   top: 45%;
   left: 33%;
   background: #999;
-/*  opacity: 0.9;*/
   width: 70%;
-  margin-left: -18%; /*Half the value of width to center div*/
-  margin-top: -250px; /*Half the value of height to center div*/
+  margin-left: -18%; 
+  margin-top: -250px; 
   z-index: 200;
 }
 
@@ -461,7 +407,6 @@ ul{
 .bottom-content {
   font-size: 0.9em;
   text-align: center;
-  /*max-height: 12em;*/
 }
 
 .bottom-info a {
