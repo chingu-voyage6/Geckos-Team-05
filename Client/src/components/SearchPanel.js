@@ -102,12 +102,12 @@ class SearchPanel extends React.Component {
 		    });
 	}
 
-	loadingTheIcon () {
-		const icon = document.getElementsByClassName("loading-icon"); 
-		this.state.isLoading
-			? icon.style.visibility = "visible"
-			: 
-		}
+	// loadingTheIcon () {
+	// 	const icon = document.getElementsByClassName("loading-icon"); 
+	// 	this.state.isLoading
+	// 		? icon.style.visibility = "visible"
+	// 		: 
+	// 	}
 
 	// RENDERING 
 
