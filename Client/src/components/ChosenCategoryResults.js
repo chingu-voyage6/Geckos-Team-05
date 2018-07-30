@@ -66,12 +66,12 @@ class SearchedResults extends React.Component {
 	          	  <div className = "date">
 		      	  	  {this.props.date}
 		      	  </div>
-	             <h5 className="popup-headline">{this.props.headline}</h5>
-	             <p className ="popup-p">{this.props.content}</p>
-	             <a href={this.props.linkUrl}>Read More</a>
+	              <h5 className="popup-headline">{this.props.headline}</h5>
+	              <p className ="popup-p">{this.props.content}</p>
+	              <a href={this.props.linkUrl}>Read More</a>
 	          </div>
 	          <div className='popup-image'>
-	            <img src={this.props.imageUrl} width={370} height={240}/>
+	              <img src={this.props.imageUrl} width={370} height={240}/>
 	          </div>	  
 	      </div>
 	    
