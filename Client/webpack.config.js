@@ -30,21 +30,21 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(
 			{     multiStep: false   }
 		)
-	],
+	]
 
-	mode : 'development',
-	devServer: {
-		historyApiFallback: true,
-		hot: true,
-		inline: true,
-		host: 'localhost',
-		// Defaults to `localhost`
-		port: 3010, // Defaults to 8080
-		proxy: {
-			'^/api/*': {
-				target: 'http://localhost:5000/api/',
-				secure: false
-			}
-		}
-	}
+	// mode : 'development',
+	// devServer: {
+	// 	historyApiFallback: true,
+	// 	hot: true,
+	// 	inline: true,
+	// 	host: 'localhost',
+	// 	// Defaults to `localhost`
+	// 	port: 3010, // Defaults to 8080
+	// 	proxy: {
+	// 		'^/api/*': {
+	// 			target: 'http://localhost:5000/api/',
+	// 			secure: false
+	// 		}
+	// 	}
+	// }
 };
