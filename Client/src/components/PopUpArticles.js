@@ -23,6 +23,7 @@ class PopUpArticles extends React.Component {
 
 	render() {
 			 	let arr = this.props.resultArticles;
+
 			 	arr = arr.slice(0,6);
 				let PopUpComponents = arr.map((val) => {
 
@@ -34,7 +35,7 @@ class PopUpArticles extends React.Component {
 					          headline = {val.title}
 					          content = {val.description}
 					          linkUrl = {val.url}
-					          date = {date_utils.timeStampToDate(val.publishedAt)}
+					           date = {val.publishedAt}
 					   		/>	
 						)
 					} else {
@@ -45,7 +46,7 @@ class PopUpArticles extends React.Component {
 						          headline = {val.title}
 						          content = {val.description}
 						          linkUrl = {val.url}
-						          date = {date_utils.timeStampToDate(val.publishedAt)}
+						           date = {val.publishedAt}
 						    />							
 						)
 					}
@@ -56,9 +57,7 @@ class PopUpArticles extends React.Component {
 		        	{PopUpComponents}
 		        </div>
 		      </div>
-		    );
-			// })
-			
+		    );			
 	}
 }
 
