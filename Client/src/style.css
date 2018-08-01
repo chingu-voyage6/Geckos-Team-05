@@ -252,14 +252,12 @@ ul{
   display: none;
 }
 .popup {
-  position: absolute;
-  top: 45%;
-  left: 33%;
   background: #999;
-  width: 70%;
-  margin-left: -18%; 
-  margin-top: -250px; 
+  max-width: 900px;
+  margin: auto; 
   z-index: 200;
+  height: 100%;
+  overflow: scroll;
 }
 
 .popupclose {
