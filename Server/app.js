@@ -31,19 +31,5 @@ app.use(express.static(path.join(__dirname, "../Client/build")));
 app.use(indexRoutes);
 app.use(apiRoutes);
 
-
-//Test rotuer
-// var testIndexRoutes = require("./routes/test/index-test");
-// app.use(testIndexRoutes);
-
-//Require database test
-// var dbTest = require("./routes/db-test");
-// app.use(dbTest);
-
-
-app.use(function(req, res) {
-  res.render("404");
-});
-
 var port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`App running on port ${port}`));
