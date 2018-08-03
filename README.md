@@ -1,11 +1,5 @@
 # News App
-> A web app to view the latest news headlines | Chingu Voyage-6, Geckos Team 5 | https://the-new-news.herokuapp.com/
-
-## About
-
-[The New News](https://the-new-news.herokuapp.com/) displays the latest top headlines from over 30,000 news sources and blogs. You can also see top stories by genre, or search for a specific topic.
-
-News stories are sourced from [The News API](https://newsapi.org/). 
+> A web app to view the latest news headlines | Chingu Voyage-6, Geckos Team 5 | https://chingu.io/
 
 ## Development Setup
 
@@ -41,7 +35,7 @@ News stories are sourced from [The News API](https://newsapi.org/).
     ```cli
     touch .env
     ```
-    Then find the file called `.env.default` and copy & paste its contents into the `.env` file. For each key available, add the necessary value (sent privately). You will need to [apply for your own API key](https://newsapi.org/).
+    Then find the file called `.env.default` and copy & paste its contents into the `.env` file. For each key available, add the necessary value (sent privately).
 
 8. Install Node packages:
     ```cli
@@ -59,7 +53,7 @@ News stories are sourced from [The News API](https://newsapi.org/).
     ```
 
 ### Finish Line
-If everything is set up correctly, after running `yarn dev`, visit [localhost:3010](localhost:3010) in your browser.
+If everything is set up correctly, after running `yarn dev`, [localhost:3000](localhost:3000) will open in your browser and you should see the React app boilerplate with a name from the database.
 
 If you open a new command line prompt, you can run `mongo` to open the Mongo shell, and then type `show dbs` to get a list of created databases. You should see `chingu-news-app`, which was created when you ran the app the first time.
   > To exit the mongo shell type `quit() + Enter`

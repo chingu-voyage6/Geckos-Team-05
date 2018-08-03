@@ -31,6 +31,7 @@ module.exports = {
 			{     multiStep: false   }
 		)
 	],
+
 	mode : 'development',
 	devServer: {
 		historyApiFallback: true,
