@@ -327,7 +327,7 @@ ul{
   background-color: white;
   border-radius: 6px;
   opacity: 0.8;
-  margin: 2em auto;
+  margin: 2em 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
