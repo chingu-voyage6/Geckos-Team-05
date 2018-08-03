@@ -367,6 +367,36 @@ ul{
   font-size: 32px;
 }
 
+  /*********** Mobile ***********/
+  @media only screen and (min-width: 320px){
+    .circle {
+        width: 30px;
+        height: 30px;
+        margin-left: 40px;
+        z-index: 2;
+    }
+
+    .popup-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+
+    .popup-info {
+         padding: 0 0; 
+    }
+
+    .popup-headline {
+        margin: 14px 0 0 0;
+    }
+
+    .popup-image{
+        margin-top: 14px;
+    }
+  }
+
 
 /*************  END OF TIMELINE  *************/
 
