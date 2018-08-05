@@ -49,7 +49,6 @@ class SearchBox extends React.Component {
 					<input type="text" className="search-input" placeholder="Type to search" value={this.props.input} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
 					<button className="search-icon" onClick={this.searchToggle}><span></span></button>
 				</div>
-	    		<span className="close" onClick={this.searchToggle}></span>
 			</div>
 		)		
 	}

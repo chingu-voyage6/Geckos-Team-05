@@ -56,7 +56,7 @@ body {
 
 
 .search-wrapper {
-    transform: translate(50%, 50%);
+    margin: 1em 0.5em 0 0.5em;
 }
 .search-wrapper.active {}
 
@@ -216,10 +216,10 @@ ul{
 }
 
 .nav-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .nav-item{
@@ -258,14 +258,12 @@ ul{
   display: none;
 }
 .popup {
-  position: absolute;
-  top: 45%;
-  left: 33%;
   background: #999;
-  width: 70%;
-  margin-left: -18%;
-  margin-top: -250px;
+  max-width: 900px;
+  margin: auto;
   z-index: 200;
+  height: 100%;
+  overflow: scroll;
 }
 
 .popupclose {
@@ -275,49 +273,85 @@ ul{
   color: red;
 }
 
+/************* END OF POP UP PAGE  ************
+
+
+
+
+
+
+/*************  TIMELINE  *************/
+.timeline-box {
+    display: flex;
+    position: relative;
+}
+
+.searched-articles {
+  overflow: hidden;
+  margin: 2em auto;
+}
+
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
-  margin: 5em auto;
+  width: 90%;
+/*  max-width: 1170px;
+*/  margin: 0 auto;
+  padding: 2em 0;
 }
 
 /* The actual timeline (the vertical ruler) */
 .timeline::after {
   content: '';
   position: absolute;
-  width: 6px;
-  background-color: white;
   top: 0;
-  bottom: 0;
-  left: 10%;
+  left: 6%;
+  height: 100%;
+  width: 6px;
+  background: white;
 }
 
 
 /* The circles on the timeline */
-.popup-content::after {
-  content: '';
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  background-color: white;
-  border: 4px solid #FF9F55;
-  top: 16px;
-  border-radius: 50%;
-  z-index: 1;
-  left: 10%;
+.circle {
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    margin-left: 60px;
+    z-index: 2;
+    margin-top: 80px;
 }
+
 
 /* The actual content */
 .popup-content {
-  width: 60%;
+  width: 70%;
   padding: 20px 30px;
   background-color: white;
   border-radius: 6px;
   opacity: 0.8;
-  margin: 2em auto;
+  margin: 2em 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: relative;
+}
+
+/*The triangle next to the box*/
+.popup-content::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid white;
+    position: absolute;
+    left: -20px;
+    top: 35px;
+    margin-right: 10px;
 }
 
 
@@ -339,7 +373,39 @@ ul{
   font-size: 32px;
 }
 
-/************* END OF POP UP PAGE  ************
+  /*********** Mobile ***********/
+  @media only screen and (min-width: 320px){
+    .circle {
+        width: 30px;
+        height: 30px;
+        margin-left: 40px;
+        z-index: 2;
+    }
+
+    .popup-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+
+    .popup-info {
+         padding: 0 0;
+    }
+
+    .popup-headline {
+        margin: 14px 0 0 0;
+    }
+
+    .popup-image{
+        margin-top: 14px;
+    }
+  }
+
+
+/*************  END OF TIMELINE  *************/
+
 
 
 /****************  IMAGES  ****************/
