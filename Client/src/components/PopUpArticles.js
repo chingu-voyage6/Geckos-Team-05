@@ -77,7 +77,7 @@ class SearchedResults extends React.Component {
 	             <a href={this.props.linkUrl}>Read More</a>
 	          </div>
 	          <div className='popup-image'>
-	            <img src={this.props.imageUrl} className='image-fit'/>
+	            <img src={this.props.imageUrl} className={["image-fit", "image-style"].join(' ')}/>
 	          </div>
 	    </div>
     );

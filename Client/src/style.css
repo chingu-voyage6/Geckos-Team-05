@@ -439,6 +439,11 @@ ul{
   object-fit: cover;
 }
 
+.image-style {
+  border-radius: 2px;
+  box-shadow: 3px 5px 8px #888;
+}
+
 @media (max-width: 500px) {
   .image {
     height: 215px;

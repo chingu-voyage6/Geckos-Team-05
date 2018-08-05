@@ -95,7 +95,7 @@ class TopArticles extends React.Component {
 	    return (
 	        <div className={['clearfix', this.props.position].join(' ') }>
 	          <div className='image'>
-	            <img src={this.props.imageUrl} className="image-fit"/>
+	            <img src={this.props.imageUrl} className={["image-fit", "image-style"].join(' ')}/>
 	          </div>
 	          <div className='info'>
 	             <h3 className="headline">{this.props.headline}</h3>
