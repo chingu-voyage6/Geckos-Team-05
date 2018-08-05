@@ -21,15 +21,16 @@ var apiRoutes = require("./routes/api");
 app.use(express.static(path.join(__dirname, "../Client/build")));
 
 // Root route
-app.get("/", (req, res) => {
-  var index = path.join(__dirname, "../Client/build/index.html");
-  res.sendFile(index);
-});
+// app.get("/", (req, res) => {
+//   var index = path.join(__dirname, "../Client/build/index.html");
+//   res.sendFile(index);
+// });
 
 // Redirect all requests to home page
-app.get("/*", (req, res) => {
-  var index = path.join(__dirname, "../Client/build/index.html");
-  res.sendFile(index);
+app.get("*", (req, res) => {
+  // var index = path.join(__dirname, "../Client/build/index.html");
+  // res.sendFile(index);
+  res.redirect("/");
 });
 
 // Run application
