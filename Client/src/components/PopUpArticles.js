@@ -9,7 +9,7 @@ class PopUpArticles extends React.Component {
 		this.state = {
 			arr: [],
 			defaultImg: ('../../assets/updating.jpg')
-			
+
 		}
 
 		// Create dev environment variables
@@ -29,35 +29,35 @@ class PopUpArticles extends React.Component {
 
 					if (val.urlToImage == null ) {
 						return (
-							<SearchedResults 
+							<SearchedResults
 							  id = {val.source.id + val.publishedAt}
 							  imageUrl = {this.state.defaultImg}
 					          headline = {val.title}
 					          content = {val.description}
 					          linkUrl = {val.url}
 					           date = {val.publishedAt}
-					   		/>	
+					   		/>
 						)
 					} else {
 						return (
-							<SearchedResults 
+							<SearchedResults
 								  id = {val.source.id + val.publishedAt}
-								  imageUrl = {val.urlToImage}					          
+								  imageUrl = {val.urlToImage}
 						          headline = {val.title}
 						          content = {val.description}
 						          linkUrl = {val.url}
 						           date = {val.publishedAt}
-						    />							
+						    />
 						)
 					}
-				})	
+				})
 			return (
 		     <div className ="searched-articles">
 		     	<div className="timeline">
 		        	{PopUpComponents}
 		        </div>
 		      </div>
-		    );			
+		    );
 	}
 }
 
@@ -77,8 +77,8 @@ class SearchedResults extends React.Component {
 	             <a href={this.props.linkUrl}>Read More</a>
 	          </div>
 	          <div className='popup-image'>
-	            <img src={this.props.imageUrl} width={370} height={240}/>
-	          </div>	  
+	            <img src={this.props.imageUrl} className='image-fit'/>
+	          </div>
 	    </div>
     );
   }
