@@ -30,5 +30,6 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(
 			{     multiStep: false   }
 		)
-	]
+	],
+	mode : 'production'
 };
