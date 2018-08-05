@@ -20,6 +20,12 @@ var apiRoutes = require("./routes/api");
 // Point Node to React build files
 app.use(express.static(path.join(__dirname, "../Client/build")));
 
+// Root route
+app.get("/", (req, res) => {
+  var index = path.join(__dirname, "../Client/build/index.html");
+  res.sendFile(index);
+});
+
 // Redirect all requests to home page
 app.get("/*", (req, res) => {
   var index = path.join(__dirname, "../Client/build/index.html");
