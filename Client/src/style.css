@@ -186,6 +186,12 @@ body {
     top: 10px;
 }
 
+@media (max-width: 500px) {
+  .search-wrapper {
+    transform: none;
+  }
+}
+
 /*************  END OF SEARCH BAR  *************/
 
 
@@ -353,6 +359,15 @@ ul{
   object-fit: cover;
 }
 
+@media (max-width: 500px) {
+  .image {
+    height: 215px;
+  }
+  .bottom-image {
+    height: 120px;
+  }
+}
+
 /**************  END IMAGES  **************/
 
 /*************  TOP ARTICLES  *************/
@@ -376,14 +391,12 @@ ul{
   font-size: 25px;
   color: black;
   text-align: center;
-
 }
 
 #top-articles p {
   font-size: 18px;
   text-align: center;
 }
-
 
 .right .image {
   flex: 1;
@@ -409,7 +422,21 @@ ul{
   margin-left: 45%;
 }
 
+@media (max-width: 500px) {
+  .clearfix {
+      flex-direction: column;
+  }
+  .right .image {
+    order: 1;
+  }
 
+  .right .info{
+    order: 2;
+  }
+  #top-articles h3 {
+    font-size: 22px;
+  }
+}
 
 /*************  END OF TOP ARTICLES  *************/
 
