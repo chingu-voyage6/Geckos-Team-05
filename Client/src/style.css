@@ -488,6 +488,10 @@ ul{
   text-align: center;
 }
 
+.info {
+  margin: 0 1vw;
+}
+
 .right .info{
   flex: 1;
   order: 1;
