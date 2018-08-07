@@ -8,7 +8,7 @@ class ChosenCategoryResults extends React.Component {
 		this.state = {
 			array: [],
 			defaultImg: ('../../assets/updating.jpg')
-		}		
+		}
 	}
 
 	render () {
@@ -17,28 +17,28 @@ class ChosenCategoryResults extends React.Component {
 				let CategoryComponents = array.map((val) => {
 					if (val.urlToImage == null ) {
 						return (
-							<SearchedResults 
+							<SearchedResults
 							  id = {val.source.id + val.publishedAt}
 							  imageUrl = {this.state.defaultImg}
 					          headline = {val.title}
 					          content = {val.description}
 					          linkUrl = {val.url}
 					          date = {val.publishedAt}
-					   		/>	
+					   		/>
 						)
 					} else {
 						return (
-							<SearchedResults 
+							<SearchedResults
 								  id = {val.source.id + val.publishedAt}
-								  imageUrl = {val.urlToImage}					          
+								  imageUrl = {val.urlToImage}
 						          headline = {val.title}
 						          content = {val.description}
 						          linkUrl = {val.url}
 						           date = {val.publishedAt}
-						    />							
+						    />
 						)
 					}
-				})	
+				})
 
 		return (
 			<div className ="searched-articles">
@@ -71,15 +71,14 @@ class SearchedResults extends React.Component {
 		              <a href={this.props.linkUrl}>Read More</a>
 		          </div>
 		          <div className='popup-image'>
-		              <img src={this.props.imageUrl} width={370} height={240}/>
-		          </div>	  
+		              <img src={this.props.imageUrl} className={["image-fit", "image-style"].join(' ')}/>
+		          </div>
 		      </div>
-	      
+
 	    </div>
-	    
+
     );
   }
 }
 
 export default ChosenCategoryResults;
-
