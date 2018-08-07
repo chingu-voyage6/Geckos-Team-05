@@ -88,7 +88,7 @@ class BottomArticles extends React.Component {
       <div className='box'>
         <div key={this.props.id}>
           <div className='bottom-image'>
-            <img src={this.props.imageUrl} width={280} height={180}/>
+            <img src={this.props.imageUrl} className={["image-fit", "image-style"].join(' ')}/>
           </div>
           <div className='bottom-info'>
              <h5 className="bottom-headline">{this.props.headline}</h5>

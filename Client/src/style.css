@@ -46,7 +46,7 @@ body {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
-  
+
 }
 /*************  END OF LOGO  *************/
 
@@ -56,11 +56,11 @@ body {
 
 
 .search-wrapper {
-    transform: translate(50%, 50%);
+    margin: 1em 0.5em 0 0.5em;
 }
 .search-wrapper.active {}
 
-.search-wrapper .input-holder {    
+.search-wrapper .input-holder {
     height: 50px;
     width:70px;
     background: rgba(255,255,255,0);
@@ -186,6 +186,12 @@ body {
     top: 10px;
 }
 
+@media (max-width: 500px) {
+  .search-wrapper {
+    transform: none;
+  }
+}
+
 /*************  END OF SEARCH BAR  *************/
 
 
@@ -210,23 +216,23 @@ ul{
 }
 
 .nav-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .nav-item{
   display: inline-block;
   padding: 15px;
   font-size: 1em;
-  
+
   /*border around the nav-item*/
   list-style-position:inside;
   border: 1.4px solid #b6a388;
   border-radius: 10%;
   margin: 1em 0.5em 0 0.5em;
-  
+
 }
 
 .nav-item a{
@@ -252,14 +258,12 @@ ul{
   display: none;
 }
 .popup {
-  position: absolute;
-  top: 45%;
-  left: 33%;
   background: #999;
-  width: 70%;
-  margin-left: -18%; 
-  margin-top: -250px; 
+  max-width: 900px;
+  margin: auto;
   z-index: 200;
+  height: 100%;
+  overflow: scroll;
 }
 
 .popupclose {
@@ -269,49 +273,85 @@ ul{
   color: red;
 }
 
+/************* END OF POP UP PAGE  ************
+
+
+
+
+
+
+/*************  TIMELINE  *************/
+.timeline-box {
+    display: flex;
+    position: relative;
+}
+
+.searched-articles {
+  overflow: hidden;
+  margin: 2em auto;
+}
+
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
-  margin: 5em auto;
+  width: 90%;
+/*  max-width: 1170px;
+*/  margin: 0 auto;
+  padding: 2em 0;
 }
 
 /* The actual timeline (the vertical ruler) */
 .timeline::after {
   content: '';
   position: absolute;
-  width: 6px;
-  background-color: white;
   top: 0;
-  bottom: 0;
-  left: 10%;
+  left: 6%;
+  height: 100%;
+  width: 6px;
+  background: white;
 }
 
 
 /* The circles on the timeline */
-.popup-content::after {
-  content: '';
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  background-color: white;
-  border: 4px solid #FF9F55;
-  top: 16px;
-  border-radius: 50%;
-  z-index: 1;
-  left: 10%;
+.circle {
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    margin-left: 60px;
+    z-index: 2;
+    margin-top: 80px;
 }
+
 
 /* The actual content */
 .popup-content {
-  width: 60%; 
+  width: 70%;
   padding: 20px 30px;
   background-color: white;
   border-radius: 6px;
   opacity: 0.8;
-  margin: 2em auto;
+  margin: 2em 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: relative;
+}
+
+/*The triangle next to the box*/
+.popup-content::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid white;
+    position: absolute;
+    left: -20px;
+    top: 35px;
+    margin-right: 10px;
 }
 
 
@@ -331,19 +371,102 @@ ul{
 }
 .date {
   font-size: 32px;
+  font-style: italic;
 }
 
-/************* END OF POP UP PAGE  ************
+  /*********** Mobile ***********/
+  @media only screen and (min-width: 320px){
+    .circle {
+        width: 30px;
+        height: 30px;
+        margin-left: 40px;
+        z-index: 2;
+    }
 
+    .popup-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        text-align: center;
+    }
+
+    .popup-headline {
+        margin: 14px 0 0 0;
+    }
+
+    .popup-image{
+        margin-top: 14px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .popup-info {
+      padding: 0 2em 0 0;
+    }
+    .popup-headline {
+      font-size: 1.2em;
+    }
+    .date {
+      font-size: 16px;
+    }
+  }
+
+
+/*************  END OF TIMELINE  *************/
+
+
+
+/****************  IMAGES  ****************/
+.image {
+  height: 320px;
+  max-width: 450px;
+}
+
+.bottom-image {
+  height: 180px;
+  max-width: 280px;
+}
+
+.popup-image{
+  height: 240px;
+  max-width: 370px;
+}
+
+.image-fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-style {
+  border-radius: 2px;
+  box-shadow: 3px 5px 8px #888;
+}
+
+@media (max-width: 500px) {
+  .image {
+    height: 215px;
+  }
+  .bottom-image {
+    height: 120px;
+  }
+  .popup-image{
+    width: 150px;
+    height: auto;
+  }
+}
+
+/**************  END IMAGES  **************/
 
 /*************  TOP ARTICLES  *************/
 .top-articles {
   margin: 1.5em 3em;
   border-width: 2px;
 }
- 
+
 .clearfix {
-    margin: 2em 0;    
+    margin: 2em 0;
     padding: 2em 0;
     border-bottom: 1px solid #b6a388;
     display: flex;
@@ -357,7 +480,6 @@ ul{
   font-size: 25px;
   color: black;
   text-align: center;
-
 }
 
 #top-articles p {
@@ -365,11 +487,14 @@ ul{
   text-align: center;
 }
 
-
 .right .image {
   flex: 1;
   order: 2;
   text-align: center;
+}
+
+.info {
+  margin: 0 1vw;
 }
 
 .right .info{
@@ -390,7 +515,21 @@ ul{
   margin-left: 45%;
 }
 
+@media (max-width: 720px) {
+  .clearfix {
+    flex-direction: column;
+  }
+  .right .image {
+    order: 1;
+  }
 
+  .right .info{
+    order: 2;
+  }
+  #top-articles h3 {
+    font-size: 22px;
+  }
+}
 
 /*************  END OF TOP ARTICLES  *************/
 
@@ -442,5 +581,3 @@ ul{
 }
 
 /**************   END OF LOADING ICON  *************/
-
-

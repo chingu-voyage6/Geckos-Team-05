@@ -9,7 +9,7 @@ class PopUpArticles extends React.Component {
 		this.state = {
 			arr: [],
 			defaultImg: ('../../assets/updating.jpg')
-			
+
 		}
 
 		// Create dev environment variables
@@ -23,33 +23,34 @@ class PopUpArticles extends React.Component {
 
 	render() {
 			 	let arr = this.props.resultArticles;
+
 			 	arr = arr.slice(0,6);
 				let PopUpComponents = arr.map((val) => {
 
 					if (val.urlToImage == null ) {
 						return (
-							<SearchedResults 
+							<SearchedResults
 							  id = {val.source.id + val.publishedAt}
 							  imageUrl = {this.state.defaultImg}
 					          headline = {val.title}
 					          content = {val.description}
 					          linkUrl = {val.url}
-					          date = {date_utils.timeStampToDate(val.publishedAt)}
-					   		/>	
+					           date = {val.publishedAt}
+					   		/>
 						)
 					} else {
 						return (
-							<SearchedResults 
+							<SearchedResults
 								  id = {val.source.id + val.publishedAt}
-								  imageUrl = {val.urlToImage}					          
+								  imageUrl = {val.urlToImage}
 						          headline = {val.title}
 						          content = {val.description}
 						          linkUrl = {val.url}
-						          date = {date_utils.timeStampToDate(val.publishedAt)}
-						    />							
+						           date = {val.publishedAt}
+						    />
 						)
 					}
-				})	
+				})
 			return (
 		     <div className ="searched-articles">
 		     	<div className="timeline">
@@ -57,8 +58,6 @@ class PopUpArticles extends React.Component {
 		        </div>
 		      </div>
 		    );
-			// })
-			
 	}
 }
 
@@ -78,8 +77,8 @@ class SearchedResults extends React.Component {
 	             <a href={this.props.linkUrl}>Read More</a>
 	          </div>
 	          <div className='popup-image'>
-	            <img src={this.props.imageUrl} width={370} height={240}/>
-	          </div>	  
+	            <img src={this.props.imageUrl} className={["image-fit", "image-style"].join(' ')}/>
+	          </div>
 	    </div>
     );
   }
