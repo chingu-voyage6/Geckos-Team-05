@@ -368,7 +368,22 @@ ul{
 }
 
   /*********** Mobile ***********/
+
+  /*@media only screen and (max-width: 1990px) {
+     margin-left: 76px;
+  }*/
+
+
   @media only screen and (min-width: 320px){
+    .circle {
+        width: 30px;
+        height: 30px;
+        margin-left: 60px;
+        z-index: 2;
+    }
+  }
+
+  @media only screen and (max-width: 320px){
     .circle {
         width: 30px;
         height: 30px;
