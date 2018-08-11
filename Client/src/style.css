@@ -314,7 +314,7 @@ ul{
     border: 4px solid #FF9F55;
     border-radius: 50%;
     transform: translateX(-50%);
-    margin-left: 60px;
+    margin-left: 78px;
     z-index: 2;
     margin-top: 80px;
 }
@@ -367,28 +367,68 @@ ul{
   font-size: 32px;
 }
 
+.link {
+      margin-left: 34%;
+}
+
   /*********** Mobile ***********/
 
-  /*@media only screen and (max-width: 1990px) {
-     margin-left: 76px;
-  }*/
 
+
+  @media only screen and (min-width: 1285px) {
+    .circle {
+      margin-left: 66px;
+    }
+   
+  }
 
   @media only screen and (min-width: 320px){
-    .circle {
-        width: 30px;
-        height: 30px;
-        margin-left: 60px;
-        z-index: 2;
+      .circle {
+          width: 30px;
+          height: 30px;
+          margin-left: 40px;
+          z-index: 2;
+      }
+
+      .link {
+        margin-left: 0;
+      }
+  }
+  @media only screen and (min-width: 2000px){
+      .circle {
+          width: 30px;
+          height: 30px;
+          margin-left: 78px;
+          z-index: 2;
+      }
+
+      .link {
+        margin-left: 0;
+      }
+      .popup-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+
+    .popup-info {
+         padding: 0 0; 
+    }
+
+    .popup-headline {
+        margin: 14px 0 0 0;
+    }
+
+    .popup-image{
+        margin-top: 14px;
     }
   }
 
   @media only screen and (max-width: 320px){
     .circle {
-        width: 30px;
-        height: 30px;
         margin-left: 40px;
-        z-index: 2;
     }
 
     .popup-content {
