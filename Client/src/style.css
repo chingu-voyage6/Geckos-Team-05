@@ -58,7 +58,6 @@ body {
 .search-wrapper {
     margin: 1em 0.5em 0 0.5em;
 }
-.search-wrapper.active {}
 
 .search-wrapper .input-holder {
     height: 50px;
@@ -256,9 +255,11 @@ ul{
   display: none;
 }
 .popup {
+  position: fixed;
   background: #999;
-  max-width: 900px;
-  margin: auto;
+  width: 100%;
+  left: 0px;
+  top: 0px;
   z-index: 200;
   height: 100%;
   overflow: scroll;
@@ -269,10 +270,13 @@ border: 1px solid #000000;
 }
 
 .popupclose {
+  position: fixed;
   float: right;
   padding: 10px;
   cursor: pointer;
-  color: red;
+  color: white;
+  font-size: 150%;
+  background-color: red;
 }
 
 /************* END OF POP UP PAGE  ************
