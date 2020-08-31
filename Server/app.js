@@ -5,11 +5,14 @@ var mongoose = require("mongoose");
 
 // Create dev environment variables
 var nodeEnv = process.env.NODE_ENV || "development";
-if (nodeEnv === "development") {
-  require("dotenv").config()}
+if (nodeEnv === "development") { require("dotenv").config() };
 
 // Connect to database & all database models
-mongoose.connect(process.env.MONGODB_URI);
+if (nodeEnv === "production") {
+  mongoose.connect(process.env.MONGODB_URI_ATLAS);
+} else {
+  mongoose.connect(process.env.MONGODB_URI);
+};
 
 // Require application routes
 var indexRoutes = require("./routes/index");
