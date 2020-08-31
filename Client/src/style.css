@@ -222,32 +222,30 @@ ul{
     flex-wrap: wrap;
 }
 
-.nav-item{
+.nav-item {
   display: inline-block;
-  padding: 15px;
+  padding: 15px 0;
   font-size: 1em;
-
-  /*border around the nav-item*/
-  list-style-position:inside;
-  border: 1.4px solid #b6a388;
-  border-radius: 10%;
   margin: 1em 0.5em 0 0.5em;
-
 }
 
-.nav-item a{
+.nav-item a {
+  padding: 15px;
+  border: 1.4px solid #b6a388;
+  border-radius: 6px;
   text-decoration: none;
   font-family: "Playfair Display", serif;
   color: #756b61;
   font-weight: bold;
 }
 
-.nav-item:hover{
+.nav-item a:hover{
   cursor: pointer;
+  color: #dbd8c7;
+  background-color: #756b61;
+  border: 1.4px solid #756b61;
+  border-radius: 6px;
 }
-
-
-
 
 /*************  END OF NAVIGATION BAR  *************/
 
@@ -264,6 +262,10 @@ ul{
   z-index: 200;
   height: 100%;
   overflow: scroll;
+  border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+border: 1px solid #000000;
 }
 
 .popupclose {
@@ -320,14 +322,14 @@ ul{
     border: 4px solid #FF9F55;
     border-radius: 50%;
     transform: translateX(-50%);
-    margin-left: 60px;
+    margin-left: 78px;
     z-index: 2;
     margin-top: 80px;
 }
 
 
 /* The actual content */
-.popup-content {
+.search-content {
   width: 70%;
   padding: 20px 30px;
   background-color: white;
@@ -338,6 +340,71 @@ ul{
   flex-direction: row;
   justify-content: center;
   position: relative;
+}
+
+/*The triangle next to the box*/
+.search-content::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid white;
+    position: absolute;
+    left: -20px;
+    top: 35px;
+    margin-right: 10px;
+}
+
+
+.search-headline {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.search-info {
+  padding: 0 2em;
+}
+
+.search-p {
+  text-align: center;
+}
+.date {
+  font-size: 32px;
+  font-style: italic;
+}
+
+.search-link {
+      margin-left: 34%;
+}
+
+/*********** Popup Page ***********/
+.circle-popup{
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  margin-left: 50px;
+  z-index: 2;
+  margin-top: 80px;
+}
+
+.popup-content {
+  width: 70%;
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 6px;
+  opacity: 0.8;
+  margin: 2em 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  text-align: center;
 }
 
 /*The triangle next to the box*/
@@ -374,13 +441,85 @@ ul{
   font-style: italic;
 }
 
+.link {
+      margin-left: 34%;
+}
+
+.popup-image {
+  margin-left: 78px;
+    margin-top: 20px;
+}
+
+.search-info {
+  display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+}
+
   /*********** Mobile ***********/
-  @media only screen and (min-width: 320px){
+
+/* The actual content */
+
+
+
+  @media only screen and (min-width: 1285px) {
     .circle {
-        width: 30px;
-        height: 30px;
+      margin-left: 66px;
+    }
+   
+  }
+
+  @media only screen and (min-width: 320px){
+      .circle {
+          width: 30px;
+          height: 30px;
+          margin-left: 62px;
+          z-index: 2;
+      }
+
+      
+
+      .link {
+        margin-left: 0;
+      }
+  }
+  @media only screen and (min-width: 2000px){
+      .circle {
+          width: 30px;
+          height: 30px;
+          margin-left: 78px;
+          z-index: 2;
+      }
+
+      .link {
+        margin-left: 0;
+      }
+      .popup-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+
+    .popup-info {
+         padding: 0 0; 
+    }
+
+    .popup-headline {
+        margin: 14px 0 0 0;
+    }
+
+    .popup-image{
+        margin-top: 14px;
+    }
+  }
+
+  @media only screen and (max-width: 320px){
+    .circle {
         margin-left: 40px;
-        z-index: 2;
     }
 
     .popup-content {

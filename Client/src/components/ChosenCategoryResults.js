@@ -61,16 +61,16 @@ class SearchedResults extends React.Component {
     return (
     	<div className = "timeline-box">
 	    	  <div className="circle"></div>
-	      	  <div className = "popup-content" key={this.props.id}>
-		          <div className='popup-info'>
+	      	  <div className = "search-content" key={this.props.id}>
+		          <div className='search-info'>
 		          	  <div className = "date">
 			      	  	  {this.props.date}
 			      	  </div>
-		              <h5 className="popup-headline">{this.props.headline}</h5>
-		              <p className ="popup-p">{this.props.content}</p>
-		              <a href={this.props.linkUrl}>Read More</a>
+		              <h5 className="search-headline">{this.props.headline}</h5>
+		              <p className ="search-p">{this.props.content}</p>
+		              <a className = "searchlink" href={this.props.linkUrl}>Read More</a>
 		          </div>
-		          <div className='popup-image'>
+		          <div className='search-image'>
 		              <img src={this.props.imageUrl} className={["image-fit", "image-style"].join(' ')}/>
 		          </div>
 		      </div>
